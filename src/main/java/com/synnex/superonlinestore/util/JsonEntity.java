@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.Util;
+package com.synnex.superonlinestore.util;
 
 import lombok.Data;
 
@@ -16,5 +16,12 @@ public class JsonEntity {
     public JsonEntity(String msg, Object data) {
         this.msg = msg;
         this.data = data;
+    }
+
+    public JsonEntity(String msg,boolean status,Object data) {
+        this.msg = msg;
+        this.status = status;
+        this.data = data;
+
     }
 }
