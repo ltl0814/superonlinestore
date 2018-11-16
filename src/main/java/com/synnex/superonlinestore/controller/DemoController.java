@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.Controller;
+package com.synnex.superonlinestore.controller;
 
 
 import org.springframework.web.bind.annotation.PathVariable;
