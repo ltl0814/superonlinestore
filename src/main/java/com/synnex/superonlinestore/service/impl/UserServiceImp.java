@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.Service.impl;
+package com.synnex.superonlinestore.service.impl;
 
 import org.springframework.stereotype.Component;
 
