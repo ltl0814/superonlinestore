@@ -17,4 +17,11 @@ public class JsonEntity {
         this.msg = msg;
         this.data = data;
     }
+
+    public JsonEntity(String msg,boolean status,Object data) {
+        this.msg = msg;
+        this.status = status;
+        this.data = data;
+
+    }
 }
