@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.108.113.197:3306/DB_practice?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: SUNkai520
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+server:
+  servlet:
+    context-path: /
