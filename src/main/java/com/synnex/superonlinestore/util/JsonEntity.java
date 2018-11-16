@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.Util;
+package com.synnex.superonlinestore.util;
 
 import lombok.Data;
 
