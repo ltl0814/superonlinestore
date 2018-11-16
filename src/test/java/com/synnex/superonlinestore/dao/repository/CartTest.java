@@ -15,13 +15,21 @@ public class CartTest {
     @Autowired
      GoRepository goRepository;
 
+    @Autowired
+    CartRepository cartRepository;
     @Test
-    public void testCar(){
+    public void testGO(){
         Db_Go go = new Db_Go();
         go.setGid(1);
         go.setOid(1);
         go.setCount(1);
         go.setSubtotal(2.2);
         goRepository.save(go);
+    }
+
+    @Test
+    public void testCar(){
+        int a = cartRepository.deleteByUid(4);
+        System.out.println(a);
     }
 }

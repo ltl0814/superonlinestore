@@ -9,8 +9,5 @@
         <module name="superonlinestore" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="superonlinestore" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
