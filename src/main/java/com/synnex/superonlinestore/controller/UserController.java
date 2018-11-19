@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -31,19 +33,18 @@ public class UserController {
 
     @ApiOperation(value = "登录", produces = "application/json")
     @PostMapping("/user/auth")
-    public JsonEntity UserLogin(@RequestParam String loginId,@RequestParam String pwd){
+    public JsonEntity UserLogin(@RequestParam String loginId,@RequestParam String pwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je;
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
             if ("2"==user.getStatus()){
                 return je = new JsonEntity("false","账号已冻结！还有："+redisTemplate.getExpire(user.getUsername(), TimeUnit.MINUTES)+"秒解封！");
             }else {
-                User user1 = userServiceImp.validateLogin(loginId,pwd);
-                if (null!=user1){
-                    return je = new JsonEntity("true",user1);
+                Boolean flag = userServiceImp.validateLogin(loginId,pwd,user);
+                if (flag==true){
+                    return je = new JsonEntity("true",user);
                 }else {
                     return je = new JsonEntity("false","密码错误！连续错误三次将冻结账号10分钟");
-
                 }
             }
         }else {

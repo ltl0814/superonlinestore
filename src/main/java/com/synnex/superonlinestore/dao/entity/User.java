@@ -2,9 +2,11 @@ package com.synnex.superonlinestore.dao.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -24,10 +26,13 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer uid;
 
+    @NotBlank
     private String username;
 
+    @Length(min = 4,message = "长度至少为4位")
     private String loginid;
 
+    @Length(min = 6,max = 10,message = "密码长度为6-10位！")
     private String pwd;
 
     private String status ="1";
