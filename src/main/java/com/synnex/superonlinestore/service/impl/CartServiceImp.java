@@ -2,21 +2,23 @@ package com.synnex.superonlinestore.service.impl;
 
 import com.synnex.superonlinestore.dao.entity.Db_Cart;
 import com.synnex.superonlinestore.dao.repository.CartRepository;
+import com.synnex.superonlinestore.dao.repository.GoodsRepository;
 import com.synnex.superonlinestore.service.CartService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 @Service
 public class CartServiceImp implements CartService {
 
     @Autowired
     CartRepository cartRepository;
+    @Autowired
+    GoodsRepository goodsRepository;
 
     @Override
     public int addToCart(int uid, int gid) {
         Db_Cart cart = new Db_Cart();
+
         return 0;
     }
 
@@ -29,17 +31,15 @@ public class CartServiceImp implements CartService {
 
 
     @Override
-    public int deletaOneFromCart(int uid ,int gid) {
-        int a = cartRepository.deleteByUidAndGid(uid,gid);
-        if(a == 1) return 1;
-        else return 0;
+    public void deletaOneFromCart(int uid ,int gid) {
+        cartRepository.deleteByUidAndGid(uid,gid);
+
     }
 
     @Override
-    public int deleteAllFromCart(int uid) {
-        int a = cartRepository.deleteByUid(uid);
-        if(a >= 1) return 1;
-        else return 0;
+    public void deleteAllFromCart(int uid) {
+        cartRepository.deleteByUid(uid);
+
     }
 
     @Override

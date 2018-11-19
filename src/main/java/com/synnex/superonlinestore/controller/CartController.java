@@ -37,22 +37,17 @@ public class CartController {
     @ApiOperation(value = "删除单项商品")
     @RequestMapping(value = "/public/api/user/{uid}/cart/{gid}", method = {RequestMethod.DELETE})
     public JsonEntity deletaOneFromCart(@PathVariable("uid")int uid,@PathVariable("gid")int gid) {
-
-        int result = cartService.deletaOneFromCart(uid,gid);
-        if(result == 1) return new JsonEntity("删除成功",true);
-        else  return new JsonEntity("删除失败",false);
-
+        cartService.deletaOneFromCart(uid,gid);
+        return new JsonEntity("删除成功",true);
     }
 
     @ApiOperation(value = "删除全部商品")
     @RequestMapping(value = "/public/api/user/{uid}/cart", method = {RequestMethod.DELETE})
     public JsonEntity deleteAllFromCart(@PathVariable("uid")int uid) {
-
-        int result = cartService.deleteAllFromCart(uid);
-        if(result == 1) return new JsonEntity("删除成功",true);
-        else  return new JsonEntity("删除失败",false);
-
+        cartService.deleteAllFromCart(uid);
+        return new JsonEntity("删除成功",true);
     }
+
 
     @ApiOperation(value = "结算")
     @RequestMapping(value = "/public/api/user/{uid}/cart/list", method = {RequestMethod.GET})
