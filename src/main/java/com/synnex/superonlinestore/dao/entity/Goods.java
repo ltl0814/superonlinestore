@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.dao.entiry;
+package com.synnex.superonlinestore.dao.entity;
 
 import lombok.Data;
 

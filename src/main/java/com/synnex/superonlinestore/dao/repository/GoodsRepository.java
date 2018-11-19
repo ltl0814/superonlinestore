@@ -1,6 +1,6 @@
 package com.synnex.superonlinestore.dao.repository;
 
-import com.synnex.superonlinestore.dao.entiry.Goods;
+import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

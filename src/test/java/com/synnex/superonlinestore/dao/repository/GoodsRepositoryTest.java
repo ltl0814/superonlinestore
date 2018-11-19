@@ -1,6 +1,6 @@
 package com.synnex.superonlinestore.dao.repository;
 
-import com.synnex.superonlinestore.dao.entiry.Goods;
+import com.synnex.superonlinestore.dao.entity.Goods;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
