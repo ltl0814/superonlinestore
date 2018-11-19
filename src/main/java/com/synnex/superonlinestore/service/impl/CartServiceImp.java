@@ -8,6 +8,9 @@ import com.synnex.superonlinestore.service.CartService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
 @Service
 public class CartServiceImp implements CartService {
 
@@ -19,7 +22,7 @@ public class CartServiceImp implements CartService {
     @Override
     public int addToCart(int uid, int gid) {
         Db_Cart cart = new Db_Cart();
-
+        Goods goods = goodsRepository.findByGid(gid);
         return 0;
     }
 
@@ -34,13 +37,11 @@ public class CartServiceImp implements CartService {
     @Override
     public void deletaOneFromCart(int uid ,int gid) {
         cartRepository.deleteByUidAndGid(uid,gid);
-
     }
 
     @Override
     public void deleteAllFromCart(int uid) {
         cartRepository.deleteByUid(uid);
-
     }
 
     @Override

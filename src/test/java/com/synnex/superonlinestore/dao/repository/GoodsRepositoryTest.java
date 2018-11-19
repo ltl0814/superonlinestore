@@ -29,5 +29,9 @@ public class GoodsRepositoryTest {
       goods.setStock(50);
      Goods goods1= goodsRepository.save(goods);
     }
+    @Test
+    public void test22(){
+        System.out.println(goodsRepository.findByGid(1));
+    }
 
 }

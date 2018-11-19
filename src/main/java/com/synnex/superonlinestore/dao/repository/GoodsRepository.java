@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface GoodsRepository extends JpaRepository<Goods,Integer> {
     public List<Goods> findAllByGidIn(List<Integer> GidList);
-    
+    Goods findByGid(int gid);
 }
