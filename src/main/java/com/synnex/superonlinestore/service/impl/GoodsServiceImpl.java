@@ -1,6 +1,6 @@
 package com.synnex.superonlinestore.service.impl;
 
-import com.synnex.superonlinestore.dao.entiry.Goods;
+import com.synnex.superonlinestore.dao.entity.Goods;
 import com.synnex.superonlinestore.dao.repository.GoodsRepository;
 import com.synnex.superonlinestore.service.GoodsService;
 import com.synnex.superonlinestore.util.JsonEntity;
