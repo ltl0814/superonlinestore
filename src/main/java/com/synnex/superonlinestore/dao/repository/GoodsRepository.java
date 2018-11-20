@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface GoodsRepository extends JpaRepository<Goods,Integer> {
     public List<Goods> findAllByGidIn(List<Integer> GidList);
+<<<<<<< HEAD
 
     @Query(value = "select * from db_goods order by create_time desc limit 0,10",nativeQuery = true)
     public List<Goods> getRecentGoods();
@@ -21,4 +22,7 @@ public interface GoodsRepository extends JpaRepository<Goods,Integer> {
     @Query(value = "select * from db_goods where title like CONCAT('%',?1,'%') ",nativeQuery = true)
     public List<Goods> getGoodsByName( String name);
     
+=======
+    Goods findByGid(int gid);
+>>>>>>> 708fc588d306b4b126f1038dbd4cd3dff876a6da
 }

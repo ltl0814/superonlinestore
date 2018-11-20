@@ -5,10 +5,13 @@ import com.synnex.superonlinestore.dao.repository.UserRepository;
 import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.util.Md5SaltTool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: Dustin Li
@@ -20,23 +23,36 @@ public class UserServiceImp implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    @Override
-    public User save(User user) {
-        try {
-            user.setPwd(Md5SaltTool.getEncryptedPwd(user.getPwd()));
-            userRepository.save(user);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+    @Autowired
+    RedisTemplate redisTemplate;
 
-        return null;
+    @Override
+    public User save(User user) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        user.setPwd(Md5SaltTool.getEncryptedPwd(user.getPwd()));
+        return userRepository.save(user);
     }
 
     @Override
-    public User validateLogin(String loginid, String pwd) {
-    return null;
+    public Boolean validateLogin(String loginid, String pwd, User user) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Boolean flag;
+        flag = Md5SaltTool.validPassword(pwd,user.getPwd());
+        if (flag){
+            redisTemplate.opsForValue().set(user.getUsername(),0);
+            return true;
+        }else {
+            Integer count = (Integer) redisTemplate.opsForValue().get(user.getUsername());
+            if (null!=count){
+                if(count<3){
+                    redisTemplate.opsForValue().set(user.getUsername(),++count,10, TimeUnit.MINUTES);
+                    return false;
+                }else {
+                    return false;
+                }
+            }else {
+                redisTemplate.opsForValue().set(user.getUsername(),++count,10,TimeUnit.MINUTES);
+                return false;
+            }
+        }
     }
 
     @Override

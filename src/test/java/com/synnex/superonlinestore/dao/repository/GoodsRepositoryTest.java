@@ -45,5 +45,9 @@ public class GoodsRepositoryTest {
         List<Goods> goodsList=goodsRepository.getGoodsByName("蜜辣");
         System.out.println();
     }
+    @Test
+    public void test22(){
+        System.out.println(goodsRepository.findByGid(1));
+    }
 
 }
