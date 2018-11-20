@@ -55,7 +55,11 @@ public class UserController {
 
     @ApiOperation(value = "注册",produces = "application/json")
     @PostMapping("/user")
+<<<<<<< HEAD
     public JsonEntity userRegist(@Valid User user, BindingResult result) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+=======
+    public JsonEntity UserRegist(User user) throws UnsupportedEncodingException ,NoSuchAlgorithmException{
+>>>>>>> 36bf361d6989c02e3ec2a2b4b024f52722f66322
         JsonEntity je;
         if (result.hasErrors()){
             List<String> errlist = new ArrayList<>();

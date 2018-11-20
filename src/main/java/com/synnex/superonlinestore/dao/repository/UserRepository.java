@@ -14,6 +14,7 @@ import javax.transaction.Transactional;
 public interface UserRepository extends JpaRepository<User,Integer> {
 
     User findByloginid(String loginid);
+    User findByUid(int uid);
 
     @Transactional
     @Modifying
