@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CartTest {
@@ -19,17 +21,12 @@ public class CartTest {
     CartRepository cartRepository;
     @Test
     public void testGO(){
-        Db_Go go = new Db_Go();
-        go.setGid(1);
-        go.setOid(1);
-        go.setCount(1);
-        go.setSubtotal(2.2);
-        goRepository.save(go);
+
     }
 
     @Test
     public void testCar(){
-        int a = cartRepository.deleteByUid(4);
-        System.out.println(a);
+        List<Db_Cart> list = cartRepository.findAllByUid(1);
+        System.out.println(list.size());
     }
 }

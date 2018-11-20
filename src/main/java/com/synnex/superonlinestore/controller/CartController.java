@@ -1,5 +1,6 @@
 package com.synnex.superonlinestore.controller;
 
+import com.synnex.superonlinestore.dao.entity.DetailResult;
 import com.synnex.superonlinestore.service.CartService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
@@ -20,17 +21,15 @@ public class CartController {
     @ApiOperation(value = "加入购物车")
     @RequestMapping(value = "/public/api/user/{uid}/cart/{gid}", method = {RequestMethod.POST})
     public JsonEntity addToCart(@PathVariable("uid")int uid, @PathVariable("gid")int gid) {
-
-        return null;
-
+        cartService.addToCart(uid,gid);
+        return new JsonEntity("加入购物成功",true);
     }
 
     @ApiOperation(value = "修改商品数量")
     @RequestMapping(value = "/public/api/user/{uid}/cart/{gid}", method = {RequestMethod.PUT})
     public JsonEntity editCount(@PathVariable("uid")int uid,@PathVariable("gid") int gid,int newCount) {
-
-        return null;
-
+        cartService.editCount(uid, gid, newCount);
+        return new JsonEntity("修改商品数量成功",true);
     }
 
 
@@ -52,16 +51,17 @@ public class CartController {
     @ApiOperation(value = "结算")
     @RequestMapping(value = "/public/api/user/{uid}/cart/list", method = {RequestMethod.GET})
     public JsonEntity payCart(@PathVariable("uid")int uid) {
-
-        return null;
+        boolean result = cartService.payCart(uid);
+        if (result) return new  JsonEntity("结算成功",true);
+        else return new  JsonEntity("库存不足",false);
 
     }
 
     @ApiOperation(value = "查询购物车")
     @RequestMapping(value = "/public/api/user/{uid}/cart", method = {RequestMethod.GET})
     public JsonEntity queryCart(@PathVariable("uid")int uid) {
-
-        return null;
+        DetailResult result = cartService.queryCart(uid);
+        return new JsonEntity("查询成功",true,result);
 
     }
 }
