@@ -26,18 +26,18 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer uid;
 
-    @NotBlank
+    @NotBlank(message = "名字不能为空！")
     private String username;
 
-    @Length(min = 4,message = "长度至少为4位")
+    @Length(min = 4,message = "长度至少为4位！")
     private String loginid;
 
-    @Length(min = 6,max = 10,message = "密码长度为6-10位！")
+    @Length(min = 6,message = "密码长度至少为6位！")
     private String pwd;
 
     private String status ="1";
 
-    @Email
+    @Email(message = "邮件格式不正确！")
     private String email;
 
     private String info;

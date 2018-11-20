@@ -26,10 +26,10 @@ public class MyControllerAdvice {
         map.put("code","000000");
         map.put("errMsg",e.getMessage());
         return new JsonEntity(null,false,map);
-    }
+}
 
-    /*
-      * 捕获全局自定义异常（自定义异常则抛出信息）
+    /**
+     * 捕获全局自定义异常（自定义异常则抛出信息）
      */
     @ResponseBody
     @ExceptionHandler(value = MyException.class)
