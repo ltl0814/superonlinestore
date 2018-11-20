@@ -3,6 +3,9 @@ package com.synnex.superonlinestore.service;
 import com.synnex.superonlinestore.dao.entity.User;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * @Author: Dustin Li
  * @Date: 11/15/18 16:53
@@ -10,9 +13,9 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
 
-    User save(User user);
+    User save(User user) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
-    User validateLogin(String loginid,String pwd);
+    Boolean validateLogin(String loginid,String pwd,User user) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     public User findByloginid(String loginid);
 

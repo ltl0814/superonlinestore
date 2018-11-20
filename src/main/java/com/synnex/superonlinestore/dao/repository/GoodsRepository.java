@@ -1,6 +1,6 @@
 package com.synnex.superonlinestore.dao.repository;
 
-import com.synnex.superonlinestore.dao.entiry.Goods;
+import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface GoodsRepository extends JpaRepository<Goods,Integer> {
     public List<Goods> findAllByGidIn(List<Integer> GidList);
-    
+    Goods findByGid(int gid);
 }

@@ -21,4 +21,14 @@ public class Db_Go implements Serializable {
     private int count;
     @Column(name = "subtotal")
     private double subtotal;
+
+    public Db_Go(){
+
+    }
+    public Db_Go(int gid, int oid, int count, double subtotal) {
+        this.gid = gid;
+        this.oid = oid;
+        this.count = count;
+        this.subtotal = subtotal;
+    }
 }
