@@ -54,7 +54,7 @@ public class UserController {
 
     @ApiOperation(value = "注册",produces = "application/json")
     @PostMapping("/user")
-    public JsonEntity UserRegist(User user){
+    public JsonEntity UserRegist(User user) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je;
         User u = userServiceImp.findByloginid(user.getLoginid());
         if (null!=u){
