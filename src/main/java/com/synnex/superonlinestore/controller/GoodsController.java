@@ -5,6 +5,9 @@ import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import com.synnex.superonlinestore.dao.entity.Goods;
 
@@ -24,8 +27,12 @@ public class GoodsController {
     //后台查询全部商品
     @ApiOperation(value = "后台查询全部商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods")
-    public JsonEntity getAllGoods(){
-        return goodsService.getAllGoods();
+    public JsonEntity getAllGoods(@RequestParam(value = "start",defaultValue = "0")int start,
+                                  @RequestParam(value = "size",defaultValue = "5")int size){
+        start = start < 0 ? 0:start;
+        Sort sort = new Sort(Sort.Direction.ASC,"gid"); //设置根据id倒序排列
+        Pageable pageable = new PageRequest(start, size,sort);
+        return goodsService.getAllGoods(pageable);
     }
 
     //后台添加商品
@@ -54,5 +61,17 @@ public class GoodsController {
     @GetMapping("/public/api/goods")
     public JsonEntity GetGoodsListByGid(@RequestParam List<Integer> gIdList){
         return goodsService.findAllByGidList(gIdList);
+    }
+
+    @ApiOperation(value = "查询最新的10个商品", produces = "application/json")
+    @GetMapping("/public/api/goods/recent")
+    public JsonEntity getGoodsListByRecent(){
+        return goodsService.getRecentGoods();
+    }
+
+    @ApiOperation(value = "根据商品名字模糊查询商品", produces = "application/json")
+    @GetMapping("/public/api/goods/title")
+    public JsonEntity getGoodsListByTitle(@RequestParam String name){
+        return  goodsService.getByLikeName(name);
     }
 }

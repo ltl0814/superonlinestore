@@ -5,6 +5,8 @@ import com.synnex.superonlinestore.dao.repository.GoodsRepository;
 import com.synnex.superonlinestore.service.GoodsService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,10 +23,10 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsRepository goodsRepository;
 
     @Override
-    public JsonEntity getAllGoods() {
-       List<Goods> goodsList=goodsRepository.findAll();
+    public JsonEntity getAllGoods(Pageable pageable) {
+       Page<Goods> page=goodsRepository.findAll(pageable);
        JsonEntity jsonEntity=new JsonEntity("查询全部商品成功",true);
-       jsonEntity.setData(goodsList);
+       jsonEntity.setData(page);
         return jsonEntity;
     }
 
@@ -65,6 +67,28 @@ public class GoodsServiceImpl implements GoodsService {
         Goods goods=optional.get();
         jsonEntity.setData(goods);
         return jsonEntity;
+    }
+
+    @Override
+    public JsonEntity getRecentGoods() {
+        List<Goods> goodsList=goodsRepository.getRecentGoods();
+        return new JsonEntity("查询最新商品列表前十成功",true,goodsList);
+    }
+
+
+    @Override
+    public JsonEntity getByLikeName(String name) {
+        /**
+         *
+         * 功能描述: 根据商品名字模糊查询商品
+         *
+         * @param: [name]模糊查询名字
+         * @return: com.synnex.superonlinestore.util.JsonEntity
+         * @auther: kobef
+         * @date: 11/20/18 14:51
+         */
+        return new JsonEntity("根据商品名字模糊查询商品成功",
+                true , goodsRepository.getGoodsByName(name));
     }
 
 

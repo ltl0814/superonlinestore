@@ -1,8 +1,12 @@
 package com.synnex.superonlinestore.dao.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * @Auther: kobef
@@ -12,6 +16,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "db_Goods")
+@EntityListeners(AuditingEntityListener.class)
 public class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,5 +49,8 @@ public class Goods {
     //图片地址
     @Column(name = "pic")
     private String pic;
+
+    @CreatedDate
+    private Date createTime;
 
 }
