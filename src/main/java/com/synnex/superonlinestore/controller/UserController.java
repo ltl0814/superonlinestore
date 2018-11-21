@@ -1,6 +1,7 @@
 package com.synnex.superonlinestore.controller;
 
 import com.synnex.superonlinestore.dao.entity.User;
+import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.service.impl.UserServiceImp;
 import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
@@ -28,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class UserController {
     private static final String LockStatus ="2";
     @Autowired
-    UserServiceImp userServiceImp;
+    UserService userServiceImp;
     @Autowired
     RedisTemplate redisTemplate;
 

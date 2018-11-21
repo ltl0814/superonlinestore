@@ -60,6 +60,7 @@ public class UserServiceImp implements UserService {
                     return false;
                 }
             }else {
+                count=0;
                 redisTemplate.opsForValue().set(user.getUsername(),++count,10,TimeUnit.MINUTES);
                 return false;
             }
@@ -99,6 +100,5 @@ public class UserServiceImp implements UserService {
             return new JsonEntity("修改失败",false);
         }
     }
-
 
 }
