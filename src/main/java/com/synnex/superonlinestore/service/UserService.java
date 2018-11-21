@@ -4,6 +4,7 @@ import com.synnex.superonlinestore.dao.entity.User;
 import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
@@ -30,7 +31,8 @@ public interface UserService {
     JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     //修改用户信息
-    JsonEntity updateUserByloginid(User user);
+    JsonEntity updateUserByloginid(User user,HttpSession session);
 
+    void deleteSession(String loginId,HttpSession session);
 }
 

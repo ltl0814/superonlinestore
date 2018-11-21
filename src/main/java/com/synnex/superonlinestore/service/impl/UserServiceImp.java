@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
@@ -89,16 +90,23 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public JsonEntity updateUserByloginid(User user) {
+    public JsonEntity updateUserByloginid(User user,HttpSession session) {
         int i = userRepository.updateUserByloginid(user.getLoginid(),
                                             user.getUsername(),
                                             user.getStatus(),
                                             user.getEmail());
         if (i==1){
+            User u = userRepository.findByloginid(user.getLoginid());
+            session.setAttribute(user.getLoginid(),u);
             return new JsonEntity("修改成功",true);
         }else {
             return new JsonEntity("修改失败",false);
         }
+    }
+
+    @Override
+    public void deleteSession(String loginId, HttpSession session) {
+        session.removeAttribute(loginId);
     }
 
 }
