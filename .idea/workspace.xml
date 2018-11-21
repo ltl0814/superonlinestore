@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="3916c6b5-9088-4998-8b1a-94417f450022" name="Default Changelist" comment="Merge remote-tracking branch 'origin/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class">
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/front/product_list.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/front/user.js" afterDir="false" />
@@ -18,25 +19,46 @@
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/front/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/front/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/slogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/slogin.html" afterDir="false" />
+=======
+    <list default="true" id="ccaddbc8-389d-421c-8ac9-b9b4c8f729c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/SuperonlinestoreApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/SuperonlinestoreApplication.class" afterDir="false" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="796094752">
-      <usages-collector id="statistics.file.extensions.open">
+    <session id="-1117977294">
+      <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="class" value="2" />
           <entry key="html" value="15" />
           <entry key="java" value="12" />
           <entry key="js" value="11" />
           <entry key="jsp" value="1" />
+=======
+          <entry key="java" value="712" />
+          <entry key="xml" value="1" />
+          <entry key="yml" value="102" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.types.open">
+      <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="CLASS" value="2" />
           <entry key="HTML" value="15" />
           <entry key="JAVA" value="12" />
@@ -56,6 +78,27 @@
           <entry key="HTML" value="1022" />
           <entry key="JAVA" value="278" />
           <entry key="JavaScript" value="2690" />
+=======
+          <entry key="JAVA" value="712" />
+          <entry key="XML" value="1" />
+          <entry key="YAML" value="102" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="5" />
+          <entry key="xml" value="2" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="5" />
+          <entry key="XML" value="2" />
+          <entry key="YAML" value="1" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
         </counts>
       </usages-collector>
     </session>
@@ -63,6 +106,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/front/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
@@ -88,12 +132,23 @@
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/front/product_list.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-29">
@@ -103,12 +158,26 @@
                 <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+              <folding>
+                <element signature="method#userLogin#0;class#UserController#0" />
+                <element signature="method#userRegist#0;class#UserController#0" />
+                <element signature="method#updatePwd#0;class#UserController#0" />
+                <element signature="method#updateEmail#0;class#UserController#0" />
+                <element signature="method#loginOut#0;class#UserController#0" />
+                <element signature="method#getUserFromSession#0;class#UserController#0" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -125,6 +194,41 @@
               </folding>
             </state>
           </provider>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="99" column="52" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#save#0;class#UserServiceImp#0" />
+                <element signature="method#validateLogin#0;class#UserServiceImp#0" />
+                <element signature="method#updateStatusByloginid#0;class#UserServiceImp#0" />
+                <element signature="method#updatePwdByloginid#0;class#UserServiceImp#0" />
+                <element signature="e#3814#3815#0" expanded="true" />
+                <element signature="e#3855#3856#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="631">
+              <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
+            </state>
+          </provider>
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
         </entry>
       </file>
     </leaf>
@@ -142,6 +246,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/slogin.html" />
@@ -150,6 +255,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/front/index.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/product_list.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/front/product_list.js" />
+=======
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
       </list>
     </option>
   </component>
@@ -159,11 +272,38 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="286" />
-    <option name="y" value="31" />
+    <option name="x" value="90" />
+    <option name="y" value="30" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring BootSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringBootApplicationYaml</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,6 +311,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,12 +397,120 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="synnex" type="462c0819:PsiDirectoryNode" />
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +518,11 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542793777997" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542786844567" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -283,9 +536,28 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager">
     <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="superonlinestore" />
+=======
+  <component name="RunManager" selected="Spring Boot.SuperonlinestoreApplication">
+    <configuration name="UserServiceImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.synnex.superonlinestore.service.impl.UserServiceImp" />
+      <module name="superonlinestorev1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.synnex.superonlinestore.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="superonlinestorev1" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.synnex.superonlinestore.*" />
@@ -297,9 +569,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+=======
+    <list>
+      <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+      <item itemvalue="Application.UserServiceImp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+        <item itemvalue="Application.UserServiceImp" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
       </list>
     </recent_temporary>
   </component>
@@ -320,22 +603,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="24178000" />
+=======
+    <option name="totallyTimeSpent" value="8574000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20682302" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.18336888" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="Web" order="7" sideWeight="0.50161815" side_tool="true" weight="0.18336888" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32850778" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.55011135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -348,6 +649,20 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946696" weight="0.32962137" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3583062" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35504887" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32899022" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4989339" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.32899022" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32947975" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4989339" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010661" side_tool="true" weight="0.2931596" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -359,11 +674,46 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4039088" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.30944625" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32899022" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.2.RELEASE/spring-data-redis-2.1.2.RELEASE.jar!/org/springframework/data/redis/cache/RedisCache.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -371,8 +721,12 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
     <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="239">
           <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
         </state>
@@ -464,14 +818,45 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/MyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+=======
+        <state relative-caret-position="1379">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/Md5SaltTool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/MyControllerAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/time/Duration.java">
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.0.RELEASE/spring-boot-2.1.0.RELEASE.jar!/org/springframework/boot/web/servlet/server/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="891">
           <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
         </state>
@@ -497,10 +882,18 @@
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+=======
+        <state relative-caret-position="298">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/test/java/com/synnex/superonlinestore/dao/repository/GoodsRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -611,19 +1004,44 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="280">
           <caret line="61" column="19" lean-forward="true" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+=======
+        <state relative-caret-position="560">
+          <caret line="99" column="52" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#save#0;class#UserServiceImp#0" />
+            <element signature="method#validateLogin#0;class#UserServiceImp#0" />
+            <element signature="method#updateStatusByloginid#0;class#UserServiceImp#0" />
+            <element signature="method#updatePwdByloginid#0;class#UserServiceImp#0" />
+            <element signature="e#3814#3815#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -635,12 +1053,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#userLogin#0;class#UserController#0" />
+            <element signature="method#userRegist#0;class#UserController#0" />
+            <element signature="method#updatePwd#0;class#UserController#0" />
+            <element signature="method#updateEmail#0;class#UserController#0" />
+            <element signature="method#loginOut#0;class#UserController#0" />
+            <element signature="method#getUserFromSession#0;class#UserController#0" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -816,5 +1246,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 0c0137abec42493377647d25e3ef070217bc05b1
   </component>
 </project>

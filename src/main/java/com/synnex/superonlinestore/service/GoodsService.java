@@ -45,4 +45,7 @@ public interface GoodsService {
 
 
     public JsonEntity getByLikeName(String name);
+
+
+    public JsonEntity getHotGoods();
 }

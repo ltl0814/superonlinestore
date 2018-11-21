@@ -91,5 +91,11 @@ public class GoodsServiceImpl implements GoodsService {
                 true , goodsRepository.getGoodsByName(name));
     }
 
+    @Override
+    public JsonEntity getHotGoods() {
+        return new JsonEntity("查询最热商品前10条成功",
+                true,goodsRepository.getGoodsByStock());
+    }
+
 
 }
