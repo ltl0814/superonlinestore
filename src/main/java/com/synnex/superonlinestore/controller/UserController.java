@@ -80,6 +80,21 @@ public class UserController {
             }
         }
     }
+    /*
+     * 注册用户时，用户名的校验
+     */
+    @ApiOperation(value = "注册loginId重复校验",produces = "application/json")
+    @GetMapping("/user/{loginid}")
+    public JsonEntity registChecking(@PathVariable("loginid") String loginid) {
+        JsonEntity je;
+        User u = userServiceImp.findByloginid(loginid);
+        if (null!=u){
+            je = new JsonEntity("用户名已存在",false,null);
+        }else{
+            je = new JsonEntity("用户名可用",true,null);
+        }
+        return je;
+    }
 
     @ApiOperation(value = "修改密码",produces = "application/json")
     @PutMapping("/user/{loginId}/pwd")

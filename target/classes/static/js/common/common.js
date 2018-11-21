@@ -1,5 +1,5 @@
 /**
- * 获取请求的url的请求参数
+ * 请求的url的参数截取
  */
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
