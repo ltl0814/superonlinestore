@@ -46,14 +46,14 @@
 			</div>
 
 
-		<div class="row" style="width:1210px;margin:0 auto;">
+		<div class="row" style="width:1210px;margin:0 auto;" id="product">
 			<div class="col-md-12">
 				<ol class="breadcrumb">
 					<li><a href="#">首页</a></li>
 				</ol>
 			</div>
 
-			<div class="col-md-2">
+		<!--	<div class="col-md-2">
 				<a href="product_info.html">
 					<img src="products/hao/small07.jpg" width="170" height="170" style="display: inline-block;">
 				</a>
@@ -180,27 +180,27 @@
 				<p><a href="product_info.html" style='color:green'>甜玉米</a></p>
 				<p><font color="#FF0000">商城价：&yen;299.00</font></p>
 			</div>
-
+			-->
 		</div>
 
 		<!--分页 -->
-		<div style="width:380px;margin:0 auto;margin-top:50px;">
-			<ul class="pagination" style="text-align:center; margin-top:10px;">
-				<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li><a href="#">6</a></li>
-				<li><a href="#">7</a></li>
-				<li><a href="#">8</a></li>
-				<li><a href="#">9</a></li>
-				<li>
-					<a href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-					</a>
-				</li>
+		<div style="width:800px;margin:0 auto;margin-top:50px;">
+
+
+			<!--		共 ${page.totalPages } 页
+					当前 ${page.number + 1 } 页
+					<a href="?pageNo=${page.number + 1 - 1 }">上一页</a>
+					<a href="?pageNo=${page.number + 1 + 1 }">下一页</a>
+					?start='+currentPage-1+'\&size=2
+   -->
+			<ul  style="list-style: none;" id="pagination">
+				<li>当前 <span id="currentNum"></span> 页
+					<a href="#" id="upper"><span aria-hidden="true">上一页</span></a>
+					<input style="width: 30px;display: inline-block;" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,"");}).call(this)" onblur="this.v();" >
+					<input type="submit" value="Go" />
+					<a href="#" id="next"><span aria-hidden="true">下一页</span></a>
+					共 <span id="totalPages"></span> 页
+					</li>
 			</ul>
 		</div>
 		<!-- 分页结束=======================        -->
@@ -244,5 +244,6 @@
 		</div>
 
 	</body>
-
+	<script type="application/javascript" src="js/front/product_list.js"></script>
+	<script type="application/javascript" src="js/common/common.js"></script>
 </html>

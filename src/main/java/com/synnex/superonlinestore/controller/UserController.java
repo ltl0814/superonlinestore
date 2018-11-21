@@ -1,6 +1,7 @@
 package com.synnex.superonlinestore.controller;
 
 import com.synnex.superonlinestore.dao.entity.User;
+import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.service.impl.UserServiceImp;
 import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
@@ -11,10 +12,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,13 +32,13 @@ import java.util.concurrent.TimeUnit;
 public class UserController {
     private static final String LockStatus ="2";
     @Autowired
-    UserServiceImp userServiceImp;
+    UserService userServiceImp;
     @Autowired
     RedisTemplate redisTemplate;
 
     @ApiOperation(value = "登录", produces = "application/json")
     @PostMapping("/user/auth")
-    public JsonEntity userLogin(@RequestParam String loginId,@RequestParam String pwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je;
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
@@ -43,9 +47,11 @@ public class UserController {
             }else {
                 Boolean flag = userServiceImp.validateLogin(loginId,pwd,user);
                 if (flag==true){
+                    session.setAttribute(user.getLoginid(),user);
                     return je = new JsonEntity("登录成功",true,user);
                 }else {
                     return je = new JsonEntity("登录失败",false,"密码错误！连续错误三次将冻结账号10分钟");
+
                 }
             }
         }else {
@@ -80,6 +86,21 @@ public class UserController {
             }
         }
     }
+    /*
+     * 注册用户时，用户名的校验
+     */
+    @ApiOperation(value = "注册loginId重复校验",produces = "application/json")
+    @GetMapping("/user/{loginid}")
+    public JsonEntity registChecking(@PathVariable("loginid") String loginid) {
+        JsonEntity je;
+        User u = userServiceImp.findByloginid(loginid);
+        if (null!=u){
+            je = new JsonEntity("用户名已存在",false,null);
+        }else{
+            je = new JsonEntity("用户名可用",true,null);
+        }
+        return je;
+    }
 
     @ApiOperation(value = "修改密码",produces = "application/json")
     @PutMapping("/user/{loginId}/pwd")
@@ -100,9 +121,38 @@ public class UserController {
 
     @ApiOperation(value = "修改用户信息",produces = "application/json")
     @PutMapping("/user/update")
-    public JsonEntity updateEmail(User user){
-        return userServiceImp.updateUserByloginid(user);
+    public JsonEntity updateEmail(User user,HttpSession session){
+        return userServiceImp.updateUserByloginid(user,session);
     }
+
+
+    @ApiOperation(value = "用户退出",produces = "application/json")
+    @GetMapping("/user/out")
+    public JsonEntity loginOut(@RequestParam String loginId,HttpSession session){
+        JsonEntity je;
+        User user = userServiceImp.findByloginid(loginId);
+        if (null!=user){
+            userServiceImp.deleteSession(loginId,session);
+            return je=new JsonEntity("退出成功",true);
+        }else {
+            return je=new JsonEntity("非法用户",false);
+        }
+    }
+
+    @ApiOperation(value = "获取session中的用户信息",produces = "application/json")
+    @GetMapping("/user/session")
+    public JsonEntity getUserFromSession(HttpSession session){
+        JsonEntity je;
+        List<Object> list = new ArrayList<>();
+        Enumeration<String> enumeration = session.getAttributeNames();
+        while (enumeration.hasMoreElements()){
+            String key = enumeration.nextElement();
+            list.add(session.getAttribute(key));
+        }
+        return je=new JsonEntity("获取成功！",true,list);
+    }
+
+
 }
 
 
