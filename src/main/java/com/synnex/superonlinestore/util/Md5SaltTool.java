@@ -119,9 +119,9 @@ public class Md5SaltTool {
         System.arraycopy(salt, 0, pwd, 0, SALT_LENGTH);
         //将消息摘要拷贝到加密口令字节数组从第13个字节开始的字节
         System.arraycopy(digest, 0, pwd, SALT_LENGTH, digest.length);
-        for(int i=0;i<pwd.length;i++){
-            System.out.print(pwd[i]);
-        }
+//        for(int i=0;i<pwd.length;i++){
+////            System.out.print(pwd[i]);
+////        }
         //将字节数组格式加密后的口令转化为16进制字符串格式的口令
         return byteToHexString(pwd);
     }

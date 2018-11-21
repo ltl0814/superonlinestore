@@ -1,6 +1,7 @@
 package com.synnex.superonlinestore.service;
 
 import com.synnex.superonlinestore.dao.entity.User;
+import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
@@ -13,17 +14,23 @@ import java.security.NoSuchAlgorithmException;
 @Service
 public interface UserService {
 
+    //创建用户
     User save(User user) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
+    //登录验证
     Boolean validateLogin(String loginid,String pwd,User user) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
-    public User findByloginid(String loginid);
+    //通过id查询用户
+    User findByloginid(String loginid);
 
+    //修改用户状态
     int updateStatusByloginid(String loginid, String status);
 
-    int updatePwdByloginid(String loginid, String pwd);
+    //修改密码
+    JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
-    int updateInfoByloginid(String loginid, String info);
+    //修改用户信息
+    JsonEntity updateUserByloginid(User user);
 
 }
 
