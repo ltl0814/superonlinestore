@@ -50,4 +50,10 @@ public class GoodsRepositoryTest {
         System.out.println(goodsRepository.findByGid(1));
     }
 
+    @Test
+    public void orderByStock(){
+        List<Goods> goodsList=goodsRepository.getGoodsByStock();
+        System.out.println();
+    }
+
 }

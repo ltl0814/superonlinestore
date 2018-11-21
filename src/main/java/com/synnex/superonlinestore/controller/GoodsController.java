@@ -10,8 +10,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import com.synnex.superonlinestore.dao.entity.Goods;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.*;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Auther: kobef
@@ -38,7 +41,24 @@ public class GoodsController {
     //后台添加商品
     @ApiOperation(value = "后台添加商品", produces = "application/json")
     @PostMapping("/public/api/backend/goods")
-    public JsonEntity addGoods(Goods goods){
+    public JsonEntity addGoods(Goods goods, @RequestParam(value = "file",required = false)MultipartFile file) throws IOException {
+        if (!file.isEmpty()){
+            String str="src/main/resources/static/upload/";
+            String fileName=file.getOriginalFilename();
+            //文件重命名
+            fileName= UUID.randomUUID().toString().replace("-","")
+            + fileName.substring(fileName.lastIndexOf("."));
+
+            File saveFile=new File(str+fileName);
+            if (!saveFile.getParentFile().exists()){
+                saveFile.getParentFile().mkdirs();
+            }
+            BufferedOutputStream out=new BufferedOutputStream(new FileOutputStream(saveFile));
+            out.write(file.getBytes());
+            out.flush();
+            out.close();
+            goods.setPic(fileName);
+        }
         return goodsService.addGoods(goods);
     }
 
@@ -73,5 +93,11 @@ public class GoodsController {
     @GetMapping("/public/api/goods/title")
     public JsonEntity getGoodsListByTitle(@RequestParam String name){
         return  goodsService.getByLikeName(name);
+    }
+
+    @ApiOperation(value = "查询最热的10个商品", produces = "application/json")
+    @GetMapping("/public/api/goods/stock")
+    public JsonEntity getGoodsListByStock(){
+        return goodsService.getHotGoods();
     }
 }
