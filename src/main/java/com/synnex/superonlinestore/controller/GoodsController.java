@@ -43,7 +43,7 @@ public class GoodsController {
     @PostMapping("/public/api/backend/goods")
     public JsonEntity addGoods(Goods goods, @RequestParam(value = "file",required = false)MultipartFile file) throws IOException {
         if (!file.isEmpty()){
-            String str="src/main/resources/static/upload/";
+            String str="src/main/resources/static/products/hao/";
             String fileName=file.getOriginalFilename();
             //文件重命名
             fileName= UUID.randomUUID().toString().replace("-","")
