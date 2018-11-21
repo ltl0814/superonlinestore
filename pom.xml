@@ -33,34 +33,30 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
-<<<<<<< HEAD
-           <groupId>org.springframework.boot</groupId>
-=======
             <groupId>org.springframework.boot</groupId>
->>>>>>> 1b757818e9a3dfbd7641c6f2d982221330739671
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+
         <dependency>
-<<<<<<< HEAD
-            <!--<groupId>org.springframework.session</groupId>-->
-            <!--<artifactId>spring-session-data-redis</artifactId>-->
-=======
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
->>>>>>> 1b757818e9a3dfbd7641c6f2d982221330739671
         </dependency>
 
         <dependency>

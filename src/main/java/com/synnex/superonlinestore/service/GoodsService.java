@@ -2,6 +2,7 @@ package com.synnex.superonlinestore.service;
 
 import com.synnex.superonlinestore.dao.entity.Goods;
 import com.synnex.superonlinestore.util.JsonEntity;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -15,22 +16,22 @@ import java.util.List;
 public interface GoodsService {
 
     //获取全部商品列表
-    public JsonEntity getAllGoods(Pageable pageable);
+    public Page<Goods> getAllGoods(Pageable pageable);
 
     //商品添加
-    public JsonEntity addGoods(Goods goods);
+    public Goods addGoods(Goods goods);
 
     //商品编辑
-    public JsonEntity saveGoods(Goods goods);
+    public Goods saveGoods(Goods goods);
 
     //商品删除
-    public JsonEntity deleteGoods(Integer gId);
+    public void deleteGoods(Integer gId);
 
     //查询商品列表
-    public JsonEntity findAllByGidList(List<Integer> gIdList);
+    public List<Goods> findAllByGidList(List<Integer> gIdList);
 
     //查询某个商品
-    public JsonEntity findone(Integer gId);
+    public Goods findone(Integer gId);
 
     /**
      *
@@ -41,11 +42,11 @@ public interface GoodsService {
      * @auther: kobef
      * @date: 11/20/18 14:11
      */
-    public JsonEntity getRecentGoods();
+    public List<Goods> getRecentGoods();
 
 
-    public JsonEntity getByLikeName(String name);
+    public List<Goods> getByLikeName(String name);
 
 
-    public JsonEntity getHotGoods();
+    public List<Goods> getHotGoods();
 }

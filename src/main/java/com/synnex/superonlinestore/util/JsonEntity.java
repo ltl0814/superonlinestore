@@ -2,11 +2,17 @@ package com.synnex.superonlinestore.util;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class JsonEntity {
+public class JsonEntity implements Serializable {
     private String msg;
     private boolean status;
     private Object data;
+
+    public JsonEntity(){
+
+    }
 
     public JsonEntity(String msg, boolean status) {
         this.msg = msg;

@@ -5,6 +5,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -17,7 +18,9 @@ import java.util.Date;
 @Entity
 @Table(name = "db_Goods")
 @EntityListeners(AuditingEntityListener.class)
-public class Goods {
+public class Goods implements Serializable {
+    public Goods(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "gid")

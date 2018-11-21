@@ -4,7 +4,10 @@ import com.synnex.superonlinestore.service.GoodsService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -22,6 +25,7 @@ import java.util.UUID;
  * @Description:
  */
 @RestController
+@Slf4j
 @Api(value = "商品管理", description = "curd")
 public class GoodsController {
     @Autowired
@@ -32,10 +36,11 @@ public class GoodsController {
     @GetMapping("/public/api/backend/goods")
     public JsonEntity getAllGoods(@RequestParam(value = "start",defaultValue = "0")int start,
                                   @RequestParam(value = "size",defaultValue = "5")int size){
+        log.info("进入分页查询");
         start = start < 0 ? 0:start;
         Sort sort = new Sort(Sort.Direction.ASC,"gid"); //设置根据id倒序排列
         Pageable pageable = new PageRequest(start, size,sort);
-        return goodsService.getAllGoods(pageable);
+        return new JsonEntity("查询全部商品成功",true,goodsService.getAllGoods(pageable));
     }
 
     //后台添加商品
@@ -59,45 +64,51 @@ public class GoodsController {
             out.close();
             goods.setPic(fileName);
         }
-        return goodsService.addGoods(goods);
+        return new JsonEntity( "添加成功",true, goodsService.addGoods(goods));
     }
 
     //后台查询单个商品
     @ApiOperation(value = "后台查询单个商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods/{gid}")
     public JsonEntity getGoods(@PathVariable("gid") Integer gid){
-        return goodsService.findone(gid);
+        log.info(""+gid);
+        return new JsonEntity("查询单个商品成功",true, goodsService.findone(gid));
     }
 
     //后台编辑单个商品
     @ApiOperation(value = "后台商品编辑", produces = "application/json")
     @PutMapping("/public/api/backend/goods")
     public JsonEntity setGoods(Goods goods){
-        return goodsService.saveGoods(goods);
+        return new JsonEntity("商品编辑成功",true,goodsService.saveGoods(goods));
     }
 
     //查询商品列表，通过LIST
     @ApiOperation(value = "根据gIdList查询商品列表", produces = "application/json")
     @GetMapping("/public/api/goods")
     public JsonEntity GetGoodsListByGid(@RequestParam List<Integer> gIdList){
-        return goodsService.findAllByGidList(gIdList);
+        return new JsonEntity("根据gIdList查询商品列表"
+                ,true
+                ,goodsService.findAllByGidList(gIdList));
     }
 
-    @ApiOperation(value = "查询最新的10个商品", produces = "application/json")
+    @ApiOperation(value = "查询最新的12个商品", produces = "application/json")
     @GetMapping("/public/api/goods/recent")
     public JsonEntity getGoodsListByRecent(){
-        return goodsService.getRecentGoods();
+        return new JsonEntity("查询最新的12个商品成功"
+                ,true, goodsService.getRecentGoods());
     }
 
     @ApiOperation(value = "根据商品名字模糊查询商品", produces = "application/json")
     @GetMapping("/public/api/goods/title")
     public JsonEntity getGoodsListByTitle(@RequestParam String name){
-        return  goodsService.getByLikeName(name);
+        return new JsonEntity("根据商品名字模糊查询商品成功"
+                ,true,goodsService.getByLikeName(name));
     }
 
     @ApiOperation(value = "查询最热的10个商品", produces = "application/json")
     @GetMapping("/public/api/goods/stock")
     public JsonEntity getGoodsListByStock(){
-        return goodsService.getHotGoods();
+        log.info("进入查询");
+        return new JsonEntity("查询最热的10个商品",true, goodsService.getHotGoods());
     }
 }

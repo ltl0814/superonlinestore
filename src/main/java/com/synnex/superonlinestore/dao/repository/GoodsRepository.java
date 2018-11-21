@@ -2,6 +2,7 @@ package com.synnex.superonlinestore.dao.repository;
 
 import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * @Date: 11/15/18 17:54
  * @Description:
  */
-public interface GoodsRepository extends JpaRepository<Goods,Integer> {
+public interface GoodsRepository extends JpaRepository<Goods,Integer> , JpaSpecificationExecutor<Goods> {
     public List<Goods> findAllByGidIn(List<Integer> GidList);
 
     @Query(value = "select * from db_goods order by create_time desc limit 0,12",nativeQuery = true)

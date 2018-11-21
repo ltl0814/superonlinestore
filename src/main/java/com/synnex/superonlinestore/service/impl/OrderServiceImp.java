@@ -4,12 +4,14 @@ import com.synnex.superonlinestore.dao.entity.*;
 import com.synnex.superonlinestore.dao.repository.*;
 import com.synnex.superonlinestore.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Cacheable(value = "goods2")
 public class OrderServiceImp implements OrderService {
     @Autowired
     CartRepository cartRepository;
