@@ -3,7 +3,6 @@ package com.synnex.superonlinestore.service.impl;
 import com.synnex.superonlinestore.dao.entity.Goods;
 import com.synnex.superonlinestore.dao.repository.GoodsRepository;
 import com.synnex.superonlinestore.service.GoodsService;
-import com.synnex.superonlinestore.util.JsonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -45,7 +44,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public void deleteGoods(Integer gid) {
+    @CacheEvict(value = "goods",allEntries = true,beforeInvocation = true)
+    public void deleteGoods(Integer gid){
         goodsRepository.deleteById(gid);
     }
 

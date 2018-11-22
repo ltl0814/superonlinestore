@@ -125,7 +125,6 @@ public class UserController {
         return userServiceImp.updateUserByloginid(user,session);
     }
 
-
     @ApiOperation(value = "用户退出",produces = "application/json")
     @GetMapping("/user/out")
     public JsonEntity loginOut(@RequestParam String loginId,HttpSession session){

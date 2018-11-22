@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="3f127835-8d30-439f-94f5-765a3ae933d5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/front/cart.js" afterDir="false" />
@@ -330,6 +331,24 @@
   <component name="RunManager">
     <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="superonlinestore" />
+=======
+  <component name="RunManager" selected="Spring Boot.SuperonlinestoreApplication">
+    <configuration name="UserServiceImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.synnex.superonlinestore.service.impl.UserServiceImp" />
+      <module name="superonlinestorev1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.synnex.superonlinestore.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="superonlinestorev1" />
+>>>>>>> b0ba7a018e599a1ddd53c34ec4465475541e31ca
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.synnex.superonlinestore.*" />
@@ -341,6 +360,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
@@ -632,4 +652,17 @@
       </provider>
     </entry>
   </component>
+=======
+    <list>
+      <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+      <item itemvalue="Application.UserServiceImp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+        <item itemvalue="Application.UserServiceImp" />
+      </list>
+    </recent_temporary>
+  </component>
+>>>>>>> b0ba7a018e599a1ddd53c34ec4465475541e31ca
 </project>

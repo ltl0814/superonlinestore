@@ -52,11 +52,15 @@ public class OrderServiceImp implements OrderService {
             User user = userRepository.findByUid(order.getUid());
             List<GoodsDetail> goodsDetails = new ArrayList<>();
             List<Db_Go> gos = goRepository.findAllByOid(order.getOid());
+            List<Integer> gids = new ArrayList<>();
+            for(Db_Go db_go: gos )gids.add(db_go.getGid());
+            List<Goods> goods = goodsRepository.findAllByGidIn(gids);
+
             double sum = 0;
             for(int i = 0; i < gos.size(); i++){
                 Db_Go go = gos.get(i);
-                Goods goods = goodsRepository.findByGid(go.getGid());
-                GoodsDetail detail = new GoodsDetail(goods.getTitle(),goods.getGid(),go.getCount(),go.getSubtotal(),goods.getPic());
+                Goods good = goods.get(i);
+                GoodsDetail detail = new GoodsDetail(good.getTitle(),good.getGid(),go.getCount(),go.getSubtotal(),good.getPic(),good.getPrice());
                 goodsDetails.add(detail);
                 sum += detail.getSuatotal();
             }

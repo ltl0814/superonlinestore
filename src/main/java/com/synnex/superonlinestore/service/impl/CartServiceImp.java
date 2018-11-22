@@ -71,28 +71,39 @@ public class CartServiceImp implements CartService {
     public boolean payCart(int uid) {
         DetailResult result = queryCart(uid);
         List<GoodsDetail> goodsDetails = result.getList();
-        Goods goods;
+
+        List<Integer> gids = new ArrayList<>();
+        for(GoodsDetail detail: goodsDetails )gids.add(detail.getGid());
+        List<Goods> goods = goodsRepository.findAllByGidIn(gids);
+
         //判断库存
         boolean flag = true;
-        for (GoodsDetail good: goodsDetails) {
-            goods = goodsRepository.findByGid(good.getGid());
-            if(good.getCount() > goods.getStock()){
+        for (int i = 0;i < goodsDetails.size();i++) {
+            Goods good = goods.get(i);
+            GoodsDetail goodsDetail = goodsDetails.get(i);
+            if(goodsDetail.getCount() > good.getStock()){
                 flag = false;
                 break;
             }
         }
+
         if(flag){
             //生成订单
             Order order = new Order(uid,new Timestamp(System.currentTimeMillis()),"已支付",result.getSum(),result.getRecipients());
             order =  orderRepository.save(order);
             //修改中间表并更新库存
-            for (GoodsDetail good: goodsDetails) {
-                Db_Go go = new Db_Go(good.getGid(),order.getOid(),good.getCount(),good.getSuatotal());
-                goRepository.save(go);
-                goods = goodsRepository.findByGid(good.getGid());
-                goods.setStock(goods.getStock() - good.getCount());
-                goodsRepository.save(goods);
+            List<Db_Go> goss = new ArrayList<>();
+            List<Goods>  goodss = new ArrayList<>();
+            for (int i = 0;i < goodsDetails.size();i++) {
+                Goods good = goods.get(i);
+                GoodsDetail goodsDetail = goodsDetails.get(i);
+                Db_Go go = new Db_Go(good.getGid(),order.getOid(),goodsDetail.getCount(),goodsDetail.getSuatotal());
+                good.setStock(good.getStock() - goodsDetail.getCount());
+                goss.add(go);
+                goodss.add(good);
             }
+            goRepository.saveAll(goss);
+            goodsRepository.saveAll(goodss);
             //清空购物车
             deleteAllFromCart(uid);
             return true;
@@ -106,12 +117,15 @@ public class CartServiceImp implements CartService {
     public DetailResult queryCart(int uid) {
         List<Db_Cart> list = cartRepository.findAllByUid(uid);
         User user = userRepository.findByUid(uid);
+        List<Integer> gids = new ArrayList<>();
+        for(Db_Cart db_cart: list )gids.add(db_cart.getGid());
+        List<Goods> goods = goodsRepository.findAllByGidIn(gids);
         List<GoodsDetail> goodsDetails = new ArrayList<>();
         double sum = 0;
         for(int i = 0; i < list.size();i++){
             Db_Cart db_cart = list.get(i);
-            Goods goods = goodsRepository.findByGid( db_cart.getGid() );
-            GoodsDetail detail = new GoodsDetail(goods.getTitle(),goods.getGid(),db_cart.getCount(),db_cart.getSubtotal(),goods.getPic());
+            Goods good = goods.get(i);
+            GoodsDetail detail = new GoodsDetail(good.getTitle(),good.getGid(),db_cart.getCount(),db_cart.getSubtotal(),good.getPic(),good.getPrice());
             goodsDetails.add(detail);
             sum += db_cart.getSubtotal();
         }
