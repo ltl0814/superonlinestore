@@ -42,18 +42,20 @@
             	描述：菜单栏
             -->
 			<div class="container-fluid">
-				<div class="col-md-4">
-					<img src="img/logo2.png" />
+				<div class="col-md-3" id="logo">
+					<!--<a href="index.html">-->
+					<!--<img src="img/logo2.png" />-->
+					<!--</a>-->
 				</div>
 				<div class="col-md-5">
 					<img src="img/header.png" />
 				</div>
-				<div class="col-md-3" style="padding-top:20px">
-					<ol class="list-inline">
-						<li><a href="login.htm">登录</a></li>
-						<li><a href="register.htm">注册</a></li>
-						<li><a href="cart.html">购物车</a></li>
-					</ol>
+				<div class="col-md-3" style="padding-top:20px" id="checking_login">
+					<!--<ol class="list-inline">-->
+					<!--<li><a href="slogin.html">登录</a></li>-->
+					<!--<li><a href="register.html">注册</a></li>-->
+					<!--<li><a href="cart.html">购物车</a></li>-->
+					<!--</ol>-->
 				</div>
 			</div>
 
@@ -64,7 +66,7 @@
 				<div style="margin:0 auto; margin-top:10px;width:950px;">
 					<strong style="font-size:16px;margin:5px 0;">订单详情</strong>
 					<table class="table table-bordered">
-						<tbody>
+						<tbody id="cart_item">
 							<tr class="warning">
 								<th>图片</th>
 								<th>商品</th>
@@ -73,27 +75,7 @@
 								<th>小计</th>
 								<th>操作</th>
 							</tr>
-							<tr class="active">
-								<td width="60" width="40%">
-									<input type="hidden" name="id" value="22">
-									<img src="./products/hao/small06.jpg" width="70" height="60">
-								</td>
-								<td width="30%">
-									<a target="_blank"> 有机蔬菜      大冬瓜...</a>
-								</td>
-								<td width="20%">
-									￥298.00
-								</td>
-								<td width="10%">
-									<input type="text" name="quantity" value="1" maxlength="4" size="10">
-								</td>
-								<td width="15%">
-									<span class="subtotal">￥596.00</span>
-								</td>
-								<td>
-									<a href="javascript:;" class="delete">删除</a>
-								</td>
-							</tr>
+
 						</tbody>
 					</table>
 				</div>
@@ -103,7 +85,7 @@
 				<div style="text-align:right;">
 					<em style="color:#ff6600;">
 				登录后确认是否享有优惠&nbsp;&nbsp;
-			</em> 赠送积分: <em style="color:#ff6600;">596</em>&nbsp; 商品金额: <strong style="color:#ff6600;">￥596.00元</strong>
+			</em> 赠送积分: <em style="color:#ff6600;" id="credits"></em>&nbsp; 商品金额: <strong id="sum" style="color:#ff6600;"></strong>
 				</div>
 				<div style="text-align:right;margin-top:10px;margin-bottom:10px;">
 					<a href="order_info.html" id="clear" class="clear">清空购物车</a>
@@ -138,5 +120,6 @@
 		</div>
 
 	</body>
-
+	<script type="application/javascript" src="js/common/common.js"></script>
+	<script type="application/javascript" src="js/front/cart.js"></script>
 </html>

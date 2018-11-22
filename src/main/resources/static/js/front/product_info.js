@@ -1,6 +1,13 @@
 //API调用 public/api/backend/goods/{gid} 后台查询单个商品
 $(function () {
+    var uid = getQueryString('uid');
     var gid = getQueryString('gid');
+
+    /**
+     * 渲染商品详情
+     * @type {*|string}
+     */
+
     var url = " public/api/backend/goods/"+gid;
     $.getJSON(url,function (result) {
         if(result.status){
@@ -12,8 +19,31 @@ $(function () {
             $("#sotck").html("库存："+product.stock);
             $("#price").html("￥："+product.price+"元/份");
             $("#introduce_img").html('<img src="'+product.pic+'" width="100%">');
-        }else{
-            alert(result.msg);
         }
     })
+
+    /**
+     * 加入购物车
+     */
+    $("#addCart").click(function () {
+        if(uid == null || uid == ""){
+            alert("请先登录后再操作哦！");
+            window.location.href = "../slogin.html";
+        }else{
+            $.ajax({
+                url:"/public/api/user/"+uid+"/cart/"+gid,
+                type: "POST",
+                // data:"{uid:"+uid+",gid:"+gid+"}",
+                success:function (result) {
+                    if(result.status){
+                        alert("成了，添加上了。");
+                    }else{
+                        alert("失败！");
+                    }
+                }
+            })
+        }
+    })
+
+
 })
