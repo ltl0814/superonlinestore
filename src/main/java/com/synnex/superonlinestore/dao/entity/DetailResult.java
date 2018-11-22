@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class DetailResult {
+public class DetailResult implements Serializable{
     private List<GoodsDetail> list;
     private double sum;
     private String  recipients;

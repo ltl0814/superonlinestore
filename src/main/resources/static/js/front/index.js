@@ -2,6 +2,20 @@
 $(function () {
 
     initIndexNewly();
+
+    /**
+     * 模糊查找功能-->页面跳转
+     */
+    $("#search_btn").click(function () {
+        var content = $("#search_content").val();
+        if(content != null){
+            window.location.href = "../product_list.html?name="+content;
+        }else{
+            window.location.href = "../product_list.html";
+        }
+        return false;
+    });
+
     /*
      *  动态渲染首页最新商品的数据
      */
@@ -28,4 +42,7 @@ $(function () {
             datatype: "json"
         })
     }
+
+
+
 })

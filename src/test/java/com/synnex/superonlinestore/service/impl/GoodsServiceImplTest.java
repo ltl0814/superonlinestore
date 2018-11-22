@@ -26,7 +26,7 @@ public class GoodsServiceImplTest {
     GoodsService goodsService;
     @Test
     public void getAllGoods() {
-     // List<Goods> list= goodsService.getAllGoods();
+
       System.out.println();
     }
 
@@ -38,7 +38,7 @@ public class GoodsServiceImplTest {
         goods.setDetail("很舒服");
         goods.setStatus("1");
         goods.setStock(50);
-       // Goods G=goodsService.addGoods(goods);
+        Goods G=goodsService.addGoods(goods);
         System.out.println();
     }
 
@@ -51,26 +51,27 @@ public class GoodsServiceImplTest {
         goods.setDetail("很舒服");
         goods.setStatus("1");
         goods.setStock(48);
-       JsonEntity goods1=goodsService.saveGoods(goods);
+      // JsonEntity goods1=goodsService.saveGoods(goods);
         System.out.println();
     }
 
     @Test
     public void deleteGoods() {
-        goodsService.deleteGoods(2);
+
+        System.out.println(goodsService.findone(1));
     }
 
     @Test
     public void findById(){
         List<Integer> list=new ArrayList<>();
         list.add(1);list.add(3);
-        JsonEntity jsonEntity=goodsService.findAllByGidList(list);
+      //  JsonEntity jsonEntity=goodsService.findAllByGidList(list);
         System.out.println();
     }
 
     @Test
     public void getOne(){
-        JsonEntity jsonEntity=goodsService.findone(1);
+     Goods goods=goodsService.findone(1);
         System.out.println();
     }
 }
