@@ -6,8 +6,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -111,4 +109,14 @@ public class GoodsController {
         log.info("进入查询");
         return new JsonEntity("查询最热的10个商品",true, goodsService.getHotGoods());
     }
+
+    @ApiOperation(value = "根据商品gid删除商品", produces = "application/json")
+    @DeleteMapping("/public/api/goods/{gid}")
+    public JsonEntity deletGoodsById(@PathVariable("gid") Integer gid){
+        goodsService.deleteGoods(gid);
+        log.info("删除商品："+gid);
+        JsonEntity jsonEntity=new JsonEntity("删除商品"+gid+"成功",true, null);
+        return jsonEntity;
+    }
+
 }

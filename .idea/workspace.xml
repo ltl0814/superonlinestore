@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="21f1dd9c-58cf-41e6-8753-67e2965e7938" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/CartServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/CartServiceImp.java" afterDir="false" />
@@ -12,6 +13,16 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/synnex/superonlinestore/dao/repository/OrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/synnex/superonlinestore/dao/repository/OrderTest.class" afterDir="false" />
+=======
+    <list default="true" id="346f6c43-58ab-42c1-b156-992cc940bb08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/synnex/superonlinestore/Service/impl/UserServiceImp.class" afterDir="false" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
     <session id="960602806">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
@@ -29,6 +41,9 @@
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
+=======
+    <session id="-1646872472">
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="17" />
@@ -41,16 +56,35 @@
           <entry key="JAVA" value="17" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="1" />
+<<<<<<< HEAD
+=======
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.opened" value="2" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="449" />
+=======
+          <entry key="java" value="71" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="449" />
+=======
+          <entry key="JAVA" value="71" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </counts>
       </usages-collector>
     </session>
@@ -58,24 +92,42 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/CartServiceImp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1596">
               <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/GoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="342">
               <caret line="29" column="19" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="19" />
+=======
+            <state relative-caret-position="270">
+              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1496#1497#0" expanded="true" />
+                <element signature="e#1543#1544#0" expanded="true" />
+              </folding>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -107,11 +159,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
               <caret line="18" column="34" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="34" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/CartService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
@@ -125,40 +187,88 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
               <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/JsonEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-765">
               <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/MyControllerAdvice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/OrderServiceImp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/repository/GoodsRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/synnex/superonlinestore/dao/repository/OrderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/OrderServiceImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/CartServiceImp.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/JsonEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/entity/Goods.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/repository/GoodsRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/entity/GoodsDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/entity/DetailResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/OrderServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/synnex/superonlinestore/dao/repository/OrderTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/synnex/superonlinestore/service/impl/GoodsServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/GoodsServiceImpl.java" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
       </list>
     </option>
   </component>
@@ -168,6 +278,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -181,11 +292,48 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+=======
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="superonlinestore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="superonlinestore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="superonlinestore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.springframework.session:spring-session-data-redis:2.1.1.RELEASE" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="122" />
+    <option name="width" value="1670" />
+    <option name="height" value="1006" />
+  </component>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -197,6 +345,7 @@
             <path>
               <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
               <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -271,19 +420,30 @@
               <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </path>
             <path>
               <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
               <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </path>
             <path>
               <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
               <item name="superonlinestorev1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="test" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </path>
             <path>
               <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
@@ -291,6 +451,10 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </path>
             <path>
               <item name="superonlinestore" type="b2602c69:ProjectViewProjectNode" />
@@ -307,13 +471,21 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="superonlinestore" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="repository" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,8 +495,12 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542854524393" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542852931197" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -355,8 +531,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="superonlinestore" />
+=======
+    <configuration name="SuperonlinestoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="superonlinestore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.synnex.superonlinestore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.synnex.superonlinestore.SuperonlinestoreApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -368,7 +555,14 @@
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="JUnit.OrderTest.testOrder" />
+=======
+        <item itemvalue="Spring Boot.SuperonlinestoreApplication" />
+        <item itemvalue="JUnit.GoodsServiceImplTest.getOne" />
+        <item itemvalue="JUnit.OrderTest.testOrder" />
+        <item itemvalue="JUnit.GoodsServiceImplTest.deleteGoods" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
       </list>
     </recent_temporary>
   </component>
@@ -381,8 +575,21 @@
       <created>1542850479852</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1542850479852</updated>
       <workItem from="1542850488900" duration="4080000" />
+=======
+      <updated>1542614818279</updated>
+      <workItem from="1542614821903" duration="4698000" />
+      <workItem from="1542678782015" duration="13157000" />
+      <workItem from="1542702022406" duration="433000" />
+      <workItem from="1542764088534" duration="5167000" />
+      <workItem from="1542770189661" duration="785000" />
+      <workItem from="1542778900788" duration="14477000" />
+      <workItem from="1542793452237" duration="1711000" />
+      <workItem from="1542795197230" duration="266000" />
+      <workItem from="1542849494264" duration="2591000" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
     </task>
     <servers />
   </component>
@@ -392,12 +599,16 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4080000" />
+=======
+    <option name="totallyTimeSpent" value="3184000" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="122" y="0" width="1670" height="1006" extended-state="1" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Designer" />
       <window_info id="Image Layers" />
       <window_info id="UI Designer" />
@@ -430,6 +641,40 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26273292" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4690367" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38882804" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32912844" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32912844" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32912844" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3263965" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32912844" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32912844" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.38260868" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32981366" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32981366" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,6 +684,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -502,18 +748,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="126" column="38" lean-forward="true" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/Md5SaltTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/MyException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/synnex/superonlinestore/service/impl/GoodsServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/repository/GoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="188">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="34" />
+=======
+        <state relative-caret-position="351">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/CartServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/OrderServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/UserServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/SuperonlinestoreApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/CartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/dao/repository/GoodsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="399">
           <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
         </state>
@@ -530,13 +886,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+=======
+        <state relative-caret-position="-4">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/MyControllerAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/util/JsonEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-765">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+=======
+        <state relative-caret-position="150">
+          <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/synnex/superonlinestore/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+          </folding>
+>>>>>>> ff7f64f58c56dc921313c56af9b7e171fb0370c8
         </state>
       </provider>
     </entry>
