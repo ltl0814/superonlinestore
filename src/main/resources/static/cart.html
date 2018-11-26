@@ -63,25 +63,24 @@
 		<div class="container">
 			<div class="row">
 
-				<div style="margin:0 auto; margin-top:10px;width:950px;">
+				<div style="margin:0 auto; margin-top:10px;width:950px;" id="cart_content">
 					<strong style="font-size:16px;margin:5px 0;">订单详情</strong>
 					<table class="table table-bordered">
 						<tbody id="cart_item">
-							<tr class="warning">
-								<th>图片</th>
-								<th>商品</th>
-								<th>价格</th>
-								<th>数量</th>
-								<th>小计</th>
-								<th>操作</th>
-							</tr>
-
+						<tr class="warning">
+							<th>图片</th>
+							<th>商品</th>
+							<th>价格</th>
+							<th>数量</th>
+							<th>小计</th>
+							<th>操作</th>
+						</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
 
-			<div style="margin-right:130px;">
+			<div style="margin-right:130px;" id="cart_content_bottom">
 				<div style="text-align:right;">
 					<em style="color:#ff6600;">
 				登录后确认是否享有优惠&nbsp;&nbsp;
@@ -90,7 +89,7 @@
 				<div style="text-align:right;margin-top:10px;margin-bottom:10px;">
 					<a href="order_info.html" id="clear" class="clear">清空购物车</a>
 					<a href="order_info.html">
-						<input type="submit" width="100" value="提交订单" name="submit" border="0" style="background: url('./images/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+						<input type="submit" width="100" value="结算" name="submit" id="buy" border="0" style="background: url('./images/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 						height:35px;width:100px;color:white;">
 					</a>
 				</div>

@@ -56,4 +56,10 @@ public class GoodsRepositoryTest {
         System.out.println();
     }
 
+    @Test
+    public void testQueryOnsales(){
+        //List<Goods> goodsList = goodsRepository.findAllByStatus("0");
+        List<Goods> goodsList = goodsRepository.queryAllByStatus("1");
+        assertEquals(6,goodsList.size());
+    }
 }

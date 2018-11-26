@@ -11,11 +11,12 @@ $(function () {
      * 模糊查找功能-->页面跳转
      */
     $("#search_btn").click(function () {
-        var content = $("#search_content").val();
-        if(content != null){
-            window.location.href = "../product_list.html?name="+content;
+        var content = $("#search_content").val().trim();
+        alert(content);
+        if(content == null || content == ""){
+            window.location.href = "../product_list.html?page=1&uid="+uid;
         }else{
-            window.location.href = "../product_list.html";
+            window.location.href = "../product_list.html?uid="+uid+"&name="+content;
         }
         return false;
     });

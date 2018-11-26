@@ -8,8 +8,9 @@ $(function () {
      * @type {*|string}
      */
 
-    var url = " public/api/backend/goods/"+gid;
-    $.getJSON(url,function (result) {
+     var url = "/public/api/backend/goods/"+gid;
+
+   $.getJSON(url,function (result) {
         if(result.status){
             var product = result.data;
             $("#pro_img").html('<img style="opacity: 1;width:400px;height:350px;" title="" class="medium" src="'+product.pic+'">');
@@ -33,7 +34,6 @@ $(function () {
             $.ajax({
                 url:"/public/api/user/"+uid+"/cart/"+gid,
                 type: "POST",
-                // data:"{uid:"+uid+",gid:"+gid+"}",
                 success:function (result) {
                     if(result.status){
                         alert("成了，添加上了。");
