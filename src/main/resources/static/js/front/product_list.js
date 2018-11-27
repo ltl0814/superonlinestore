@@ -13,11 +13,14 @@ $(function(){
      * 带分页的查询所有商品信息
      */
     function queryAll(currentNum,size){
+
         $.ajax({
             url:"/public/api/backend/goods?start="+currentNum+"&size="+size,
+            async: false,
             type:"GET",
             success:function (result) {
                 if(result.status){
+                    $("#product").html("");
                     var productList = result.data.content;
                     var products = "";
                     $.each(productList,function(index,item){
@@ -41,7 +44,7 @@ $(function(){
                         '共 '+result.data.totalPages+' 页' +
                         '</li>');
                     //上一页
-                    $("#upper").click(function(){
+                  $("#upper").click(function(){
                         if(currentPage == 1){
                             alert("您已处在第一页");
                             return false;
@@ -70,16 +73,17 @@ $(function(){
         $.ajax({
             url: "/public/api/goods/title?name=" + name,
             type: "GET",
+            async:false,
             success: function (result) {
                 if(result.status){
                     var products = "";
                     var productList = result.data;
                     $.each(productList,function(index,item){
                         products += '<div class="col-md-2">' +
-                            '<a href="product_info.html?gid='+item.gid+'">' +
+                            '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">' +
                             '<img src="'+item.pic+'" width="170" height="170" style="display: inline-block;">' +
                             '</a>' +
-                            '<p><a href="product_info.html?gid='+item.gid+'" style="color:green">'+item.title+'</a></p>' +
+                            '<p><a href="product_info.html?gid='+item.gid+'&uid='+uid+'" style="color:green">'+item.title+'</a></p>' +
                             '<p><font color="#FF0000">商城价：￥'+item.price+'</font></p>' +
                             '</div>';
                     });

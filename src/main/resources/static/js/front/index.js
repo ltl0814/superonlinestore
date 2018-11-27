@@ -12,7 +12,6 @@ $(function () {
      */
     $("#search_btn").click(function () {
         var content = $("#search_content").val().trim();
-        alert(content);
         if(content == null || content == ""){
             window.location.href = "../product_list.html?page=1&uid="+uid;
         }else{
