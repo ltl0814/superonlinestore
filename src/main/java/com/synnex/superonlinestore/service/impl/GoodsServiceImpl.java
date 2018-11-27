@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,9 +24,9 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsRepository goodsRepository;
 
     @Override
-  // @Cacheable(value = "goods",key = "'findAll'"+#pageable.)
-    public Page<Goods> getAllGoods(Pageable pageable) {
-       Page<Goods> page=goodsRepository.findAll(pageable);
+   @Cacheable(value = "goods",key = "'findAll'+#pageable.pageSize+#pageable.pageNumber")
+    public Page<Goods> getAllGoods(Specification specification, Pageable pageable) {
+       Page<Goods> page=goodsRepository.findAll(specification,pageable);
         return page;
     }
 
@@ -57,9 +58,9 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-   // @Cacheable(value = "goods",key = "#gId")
-    public Goods findone(Integer gId) {
-        Goods goods=goodsRepository.findByGid(gId);
+    @Cacheable(value = "goods",key = "'findById'+#gid")
+    public Goods findone(int gid) {
+        Goods goods=goodsRepository.findByGid(gid);
         return goods;
     }
 
@@ -91,6 +92,5 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Goods> getHotGoods() {
         return goodsRepository.getGoodsByStock();
     }
-
 
 }

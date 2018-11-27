@@ -52,9 +52,13 @@ public class GoodsRepositoryTest {
 
     @Test
     public void orderByStock(){
-        List<Goods> goodsList=goodsRepository.getGoodsByStock();
-        System.out.println();
+        System.out.println(goodsRepository.findByGid(1));
+        System.out.println(goodsRepository.findByGid(1));
+        System.out.println(goodsRepository.findByGid(2));
+        System.out.println(goodsRepository.findByGid(2));
     }
+
+
 
     @Test
     public void testQueryOnsales(){
@@ -62,4 +66,5 @@ public class GoodsRepositoryTest {
         List<Goods> goodsList = goodsRepository.queryAllByStatus("1");
         assertEquals(6,goodsList.size());
     }
+
 }
