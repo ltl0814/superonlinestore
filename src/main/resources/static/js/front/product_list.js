@@ -12,11 +12,11 @@ $(function(){
     /**
      * 带分页的查询所有商品信息
      */
+    var currentPage = 1;
+    var totalPage = 5;
     function queryAll(currentNum,size){
-
         $.ajax({
             url:"/public/api/backend/goods?start="+currentNum+"&size="+size,
-            async: false,
             type:"GET",
             success:function (result) {
                 if(result.status){
@@ -34,17 +34,19 @@ $(function(){
                     });
                     $("#product").append(products);
                     //分页
-                    var currentPage = result.data.pageable.pageNumber+1;
+                    currentPage = result.data.pageable.pageNumber+1;
+                    totalPage = result.data.totalPages;
                     $("#pagination").html("");
                     $("#pagination").html('<li>当前 '+currentPage+' 页' +
                         '<a href="javascript:;" id="upper"><span aria-hidden="true">上一页</span></a>' +
                         '<input value="'+currentPage+'" class="to_page" style="width: 30px;display: inline-block;" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,"");}).call(this)" onblur="this.v();" >' +
                         '<input type="button" value="Go" />' +
                         '<a href="javascript:;" id="next"><span aria-hidden="true">下一页</span></a>' +
-                        '共 '+result.data.totalPages+' 页' +
+                        '共 '+totalPage+' 页' +
                         '</li>');
+
                     //上一页
-                  $("#upper").click(function(){
+                    $("#upper").click(function(){
                         if(currentPage == 1){
                             alert("您已处在第一页");
                             return false;
@@ -54,16 +56,18 @@ $(function(){
                     });
                     //下一页
                     $("#next").click(function(){
-                        if(currentPage == result.data.totalPages){
+                        if(currentPage == totalPage){
                             alert("您已处在最后页");
                             return false;
                         }else{
                             window.location.href = "../product_list.html?page="+(currentPage+1)+"&uid="+uid;
                         }
                     });
+
                 }
             }
         })
+
     }
 
     /**
