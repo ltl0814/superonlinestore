@@ -29,7 +29,7 @@ $(function(){
         $.each(products,function (index,item) {
             $("#cart_item").append('<tr class="active"> '+
                 '<td width="60" width="40%">'+
-                '<img src="'+item.pic+'" width="70" height="60">'+
+                '<img src="../../products/hao/'+item.pic+'" width="70" height="60">'+
                 '</td><td width="30%">'+
                 '<a target="_blank">'+item.title+'</a></td>'+
             '<td width="20%"> ￥'+item.price+'</td>'+

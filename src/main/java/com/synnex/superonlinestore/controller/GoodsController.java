@@ -58,7 +58,7 @@ public class GoodsController {
     //后台添加商品
     @ApiOperation(value = "后台添加商品", produces = "application/json")
     @PostMapping("/public/api/backend/goods")
-    public JsonEntity addGoods(@RequestBody Goods goods, @RequestParam(value = "file",required = false)MultipartFile file) throws IOException {
+    public JsonEntity addGoods(Goods goods, @RequestParam(value = "file",required = false)MultipartFile file) throws IOException {
         if (!file.isEmpty()){
             String str="src/main/resources/static/products/hao/";
             String fileName=file.getOriginalFilename();
