@@ -12,7 +12,7 @@
 </head>
 <body style="background: #278296">
 <center><font style="color:#f00"></font></center>
-<form method="post" action="home.html" >
+<form method="post" >
   <table cellspacing="0" cellpadding="0" style="margin-top: 100px" align="center">
   <tr>
     <td style="padding-left: 50px">
@@ -37,7 +37,8 @@
 			var username = $("input[name='username']").val();
 			var password = $("input[name='password']").val();
 			if(username=="root"&&password=="123456"){
-				return true;
+			    window.location.href="home.html";
+				return false;
 			}else{
 				$("font").html("用户名密码错误!");
 				return false;				

@@ -58,5 +58,14 @@ public class GoodsRepositoryTest {
         System.out.println(goodsRepository.findByGid(2));
     }
 
+<<<<<<< HEAD
 
+=======
+    @Test
+    public void testQueryOnsales(){
+        //List<Goods> goodsList = goodsRepository.findAllByStatus("0");
+        List<Goods> goodsList = goodsRepository.queryAllByStatus("1");
+        assertEquals(6,goodsList.size());
+    }
+>>>>>>> f008373b84fa17a98c783182c433f52e7ad78ccd
 }

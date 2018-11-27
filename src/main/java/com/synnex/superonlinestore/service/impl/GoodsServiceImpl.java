@@ -24,9 +24,15 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsRepository goodsRepository;
 
     @Override
+<<<<<<< HEAD
    @Cacheable(value = "goods",key = "'findAll'+#pageable.pageSize+#pageable.pageNumber")
     public Page<Goods> getAllGoods(Specification specification, Pageable pageable) {
        Page<Goods> page=goodsRepository.findAll(specification,pageable);
+=======
+  // @Cacheable(value = "goods",key = "'findAll'"+#pageable.)
+    public Page<Goods> getAllGoods(Pageable pageable) {
+       Page<Goods> page=goodsRepository.findAll(pageable);
+>>>>>>> f008373b84fa17a98c783182c433f52e7ad78ccd
         return page;
     }
 
@@ -58,9 +64,15 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+<<<<<<< HEAD
     @Cacheable(value = "goods",key = "'findById'+#gid")
     public Goods findone(int gid) {
         Goods goods=goodsRepository.findByGid(gid);
+=======
+   // @Cacheable(value = "goods",key = "#gId")
+    public Goods findone(Integer gId) {
+        Goods goods=goodsRepository.findByGid(gId);
+>>>>>>> f008373b84fa17a98c783182c433f52e7ad78ccd
         return goods;
     }
 
