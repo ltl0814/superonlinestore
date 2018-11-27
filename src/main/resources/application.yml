@@ -11,10 +11,7 @@ spring:
 server:
   servlet:
     context-path: /
-<<<<<<< HEAD
-=======
 
->>>>>>> f008373b84fa17a98c783182c433f52e7ad78ccd
     session:
       timeout: 2h
 
