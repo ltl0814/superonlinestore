@@ -9,10 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.io.*;
 import java.util.List;
 import java.util.UUID;
@@ -38,7 +43,16 @@ public class GoodsController {
         start = start < 0 ? 0:start;
         Sort sort = new Sort(Sort.Direction.ASC,"gid"); //设置根据id倒序排列
         Pageable pageable = new PageRequest(start, size,sort);
-        return new JsonEntity("查询全部商品成功",true,goodsService.getAllGoods(pageable));
+        Specification<Goods> spec=new Specification<Goods>() {
+            @Override
+            public Predicate toPredicate(Root<Goods> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+                  Predicate predicate=null;
+                  predicate=criteriaBuilder.equal(root.get("status"),"1");
+                  query.where(predicate);
+                return null;
+            }
+        };
+        return new JsonEntity("查询全部商品成功",true,goodsService.getAllGoods(spec,pageable));
     }
 
     //后台添加商品
@@ -68,7 +82,7 @@ public class GoodsController {
     //后台查询单个商品
     @ApiOperation(value = "后台查询单个商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods/{gid}")
-    public JsonEntity getGoods(@PathVariable("gid") Integer gid){
+    public JsonEntity getGoods(@PathVariable("gid") int gid){
         log.info(""+gid);
         return new JsonEntity("查询单个商品成功",true, goodsService.findone(gid));
     }

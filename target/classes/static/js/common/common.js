@@ -32,7 +32,6 @@ $(function () {
                 $("#logout").click(function () {
                     var url = "/public/api/user/out?loginId="+loginedId;
                     $.getJson(url,function (result) {
-                        alert(result);
                         if(result.status){
                             alert("congraduations,成功退出！");
                             window.location.href = "../slogin.html";
