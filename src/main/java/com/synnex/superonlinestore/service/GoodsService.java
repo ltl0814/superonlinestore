@@ -26,7 +26,7 @@ public interface GoodsService {
     public Goods saveGoods(Goods goods);
 
     //商品删除
-    public void deleteGoods(Integer gId);
+    public int deleteGoods(Integer gId);
 
     //查询商品列表
     public List<Goods> findAllByGidList(List<Integer> gIdList);
@@ -45,9 +45,9 @@ public interface GoodsService {
      */
     public List<Goods> getRecentGoods();
 
-
+    //根据商品名模糊查询
     public List<Goods> getByLikeName(String name);
 
-
+   //获取销量最高的TOP12
     public List<Goods> getHotGoods();
 }

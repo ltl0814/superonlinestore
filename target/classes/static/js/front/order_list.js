@@ -26,7 +26,7 @@ $(function(){
                         for(var i=0;i<item.list.length;i++){
                             $("#order").append('<tr class="active">' +
                                 '<td width="60" width="40%">' +
-                                '<img src="'+item.list[i].pic+'" width="70" height="60">' +
+                                '<img src="../../products/hao/'+item.list[i].pic+'" width="70" height="60">' +
                                 '</td>' +
                                 '<td width="30%">' +
                                // '<a target="_blank">'+v.title+'</a>' +

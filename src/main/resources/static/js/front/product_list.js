@@ -20,13 +20,12 @@ $(function(){
             type:"GET",
             success:function (result) {
                 if(result.status){
-                    $("#product").html("");
                     var productList = result.data.content;
                     var products = "";
                     $.each(productList,function(index,item){
                         products += '<div class="col-md-2">' +
                                         '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">' +
-                                            '<img src="'+item.pic+'" width="170" height="170" style="display: inline-block;">' +
+                                            '<img src="../../products/hao/'+item.pic+'" width="170" height="170" style="display: inline-block;">' +
                                          '</a>' +
                                          '<p><a href="product_info.html?gid='+item.gid+'&uid='+uid+'" style="color:green">'+item.title+'</a></p>' +
                                          '<p><font color="#FF0000">商城价：￥'+item.price+'</font></p>' +
@@ -85,7 +84,7 @@ $(function(){
                     $.each(productList,function(index,item){
                         products += '<div class="col-md-2">' +
                             '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">' +
-                            '<img src="'+item.pic+'" width="170" height="170" style="display: inline-block;">' +
+                            '<img src="../../products/hao/'+item.pic+'" width="170" height="170" style="display: inline-block;">' +
                             '</a>' +
                             '<p><a href="product_info.html?gid='+item.gid+'&uid='+uid+'" style="color:green">'+item.title+'</a></p>' +
                             '<p><font color="#FF0000">商城价：￥'+item.price+'</font></p>' +
