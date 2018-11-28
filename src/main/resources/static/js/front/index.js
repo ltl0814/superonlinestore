@@ -42,7 +42,4 @@ $(function () {
             datatype: "json"
         })
     }
-
-
-
 })

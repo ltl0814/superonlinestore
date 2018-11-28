@@ -2,7 +2,6 @@ package com.synnex.superonlinestore.controller;
 
 import com.synnex.superonlinestore.dao.entity.User;
 import com.synnex.superonlinestore.service.UserService;
-import com.synnex.superonlinestore.service.impl.UserServiceImp;
 import com.synnex.superonlinestore.util.JsonEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -36,7 +35,7 @@ public class UserController {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @ApiOperation(value = "登录", produces = "application/json")
+    @ApiOperation(value = "用户登录", produces = "application/json")
     @PostMapping("/user/auth")
     public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je;
@@ -59,7 +58,7 @@ public class UserController {
         }
     }
 
-    @ApiOperation(value = "注册",produces = "application/json")
+    @ApiOperation(value = "用户注册",produces = "application/json")
     @PostMapping("/user")
     public JsonEntity userRegist(@Valid User user, BindingResult result) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
@@ -86,9 +85,7 @@ public class UserController {
             }
         }
     }
-    /*
-     * 注册用户时，用户名的校验
-     */
+
     @ApiOperation(value = "注册loginId重复校验",produces = "application/json")
     @GetMapping("/user/{loginid}")
     public JsonEntity registChecking(@PathVariable("loginid") String loginid) {
