@@ -4,6 +4,11 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * @Auther: kobef
+ * @Date: 11/15/18 17:15
+ * @Description:
+ */
 @Data
 public class JsonEntity implements Serializable {
     private String msg;

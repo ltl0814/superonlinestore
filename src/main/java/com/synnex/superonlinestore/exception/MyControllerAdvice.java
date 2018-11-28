@@ -1,7 +1,6 @@
-package com.synnex.superonlinestore.controller;
+package com.synnex.superonlinestore.exception;
 
 import com.synnex.superonlinestore.util.JsonEntity;
-import com.synnex.superonlinestore.util.MyException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

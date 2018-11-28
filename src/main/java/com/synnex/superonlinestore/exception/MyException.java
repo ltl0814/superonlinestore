@@ -1,4 +1,4 @@
-package com.synnex.superonlinestore.util;
+package com.synnex.superonlinestore.exception;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

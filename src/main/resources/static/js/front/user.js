@@ -11,7 +11,7 @@ $(function(){
             data:$("#login_form").serialize(),
             success:function (result) {
                 if(result.status){
-                    window.location.href="../index.html";
+                    window.location.href="../index.html?uid="+result.data.uid;
                 }else{
                     $("#errMsg").html("");
                     if(result.data != null){

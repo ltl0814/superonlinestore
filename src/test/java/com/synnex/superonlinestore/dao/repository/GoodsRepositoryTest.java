@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -52,8 +53,24 @@ public class GoodsRepositoryTest {
 
     @Test
     public void orderByStock(){
-        List<Goods> goodsList=goodsRepository.getGoodsByStock();
-        System.out.println();
+        System.out.println(goodsRepository.findByGid(1));
+        System.out.println(goodsRepository.findByGid(1));
+        System.out.println(goodsRepository.findByGid(2));
+        System.out.println(goodsRepository.findByGid(2));
     }
 
+
+
+    @Test
+    public void testQueryOnsales(){
+        //List<Goods> goodsList = goodsRepository.findAllByStatus("0");
+        List<Goods> goodsList = goodsRepository.queryAllByStatus("1");
+        assertEquals(6,goodsList.size());
+    }
+    @Transactional
+    @Test
+    public void testSaleOutProductByGid(){
+        int i = goodsRepository.saleOutProductByGid(3);
+        assertEquals(1,i);
+    }
 }
