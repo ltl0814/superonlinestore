@@ -61,12 +61,21 @@ $(function () {
                             '</a>' +
                             '</td>' +
                             '<td align="center" style="HEIGHT: 22px" width="5%">' +
+<<<<<<< HEAD
                            '<a href="javascript:void(0);">' +
+=======
+                            '<a href="javasctipt:void(0);" onclick="test()">' +
+>>>>>>> d49a7a4f29085dcfe93f8206c5e939d0c9018dd4
                             '<img src="../..//img/admin/button_clock.gif" width="16" height="16" border="0" style="CURSOR: hand">' +
                            '</a>' +
                             '</td>' +
                             '</tr>'
                     });
+                    //deleteByGid('+item.gid+','+item.title+')
+                    function test(){
+                        alert(test);
+                    }
+
                     $("#onsaleProducts").append(products);
 
 

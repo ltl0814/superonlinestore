@@ -98,7 +98,7 @@ $(function () {
                         alert("成了，更新成功。");
                         window.location.href = "../../Administer/product/list.html?page=1";
                     }else{
-                        alert("更新成败！");
+                        alert("更新失败！");
                     }
                 }
             });

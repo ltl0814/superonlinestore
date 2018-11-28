@@ -45,9 +45,9 @@ public interface GoodsService {
      */
     public List<Goods> getRecentGoods();
 
-
+    //根据商品名模糊查询
     public List<Goods> getByLikeName(String name);
 
-
+   //获取销量最高的TOP12
     public List<Goods> getHotGoods();
 }
