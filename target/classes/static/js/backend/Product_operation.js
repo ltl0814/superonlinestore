@@ -54,7 +54,9 @@ $(function () {
    //跳转商品编辑页面
     function toModifyProductPage(gid) {
         $("#operation_method").html("修改商品");
-        alert(gid);
+        $.ajax({
+
+        })
     }
 
 })

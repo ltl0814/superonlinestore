@@ -4,20 +4,7 @@ $(function () {
     //查询所有在售商品
     queryAll(page-1,10);
 
-    //下架商品
-    function deleteByGid(gid,title){
-        if(confirm("您将下架"+title+"商品")){
-            $.ajax({
-                url:"/public/api/goods/"+gid,
-                type:"delete",
-                success: function(result){
-                    if(result.status){
-                        alert("下架商品成功！");
-                    }
-                }
-            })
-        }
-    }
+
 
     /**
      * 查询所有在售的商品即status为1的商品
@@ -61,7 +48,7 @@ $(function () {
                             '</a>' +
                             '</td>' +
                             '<td align="center" style="HEIGHT: 22px" width="5%">' +
-                            '<a href="javasctipt:;" class="delete">' +
+                            '<a href="javasctipt:void(0);" onclick="deleteByGid('+item.gid+','+item.title+')">' +
                             '<img src="../..//img/admin/button_clock.gif" width="16" height="16" border="0" style="CURSOR: hand">' +
                             '</a>' +
                             '</td>' +
@@ -69,6 +56,21 @@ $(function () {
 
                     });
                     $("#onsaleProducts").append(products);
+
+                    //下架商品
+                    function deleteByGid(gid,title){
+                        if(confirm("您将下架"+title+"商品")){
+                            $.ajax({
+                                url:"/public/api/goods/"+gid,
+                                type:"delete",
+                                success: function(result){
+                                    if(result.status){
+                                        alert("下架商品成功！");
+                                    }
+                                }
+                            })
+                        }
+                    }
 
                     //分页
                     currentPage = result.data.pageable.pageNumber+1;

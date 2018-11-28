@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -45,9 +46,10 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
     @CacheEvict(value = "goods",allEntries = true,beforeInvocation = true)
-    public void deleteGoods(Integer gid){
-        goodsRepository.deleteById(gid);
+    public int deleteGoods(Integer gid){
+        return goodsRepository.saleOutProductByGid(gid);
     }
 
     @Override

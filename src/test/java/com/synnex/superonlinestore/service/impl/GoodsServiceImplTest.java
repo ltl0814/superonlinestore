@@ -74,4 +74,11 @@ public class GoodsServiceImplTest {
      Goods goods=goodsService.findone(1);
         System.out.println();
     }
+
+    @Test
+    public void testSaleOutProduct(){
+        int i = goodsService.deleteGoods(3);
+        System.out.println(i);
+    }
+
 }

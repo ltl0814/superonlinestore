@@ -26,7 +26,7 @@ public interface GoodsService {
     public Goods saveGoods(Goods goods);
 
     //商品删除
-    public void deleteGoods(Integer gId);
+    public int deleteGoods(Integer gId);
 
     //查询商品列表
     public List<Goods> findAllByGidList(List<Integer> gIdList);
