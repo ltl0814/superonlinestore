@@ -63,12 +63,12 @@ $(function () {
 
 })
 
-
     /**
      * 请求的url的参数截取
      */
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        // window.location.search这个方法是把url的？号开始的字符串截取出来（包括符号？）
         var r = window.location.search.substr(1).match(reg);
         if (r != null) {
             return decodeURIComponent(r[2]);

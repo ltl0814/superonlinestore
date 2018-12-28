@@ -4,7 +4,6 @@ $(function () {
      var uid = getQueryString("uid");
 
     //checkingUser(currentUid);
-
     initIndexNewly();
 
     /**
@@ -13,9 +12,12 @@ $(function () {
     $("#search_btn").click(function () {
         var content = $("#search_content").val().trim();
         if(content == null || content == ""){
-            window.location.href = "../product_list.html?page=1&uid="+uid;
+            // window.location.href = "../product_list.html?page=1&uid="+uid;
+            $("#search_content").attr("placeholder","请勿输入空值！");
         }else{
             window.location.href = "../product_list.html?uid="+uid+"&name="+content;
+            $("#search_content").attr("placeholder","请输入需要查询的内容")
+            $("#search_content").val("");
         }
         return false;
     });
