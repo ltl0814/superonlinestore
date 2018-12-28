@@ -47,7 +47,4 @@ $(function () {
             datatype: "json"
         })
     }
-
-
-
 })
