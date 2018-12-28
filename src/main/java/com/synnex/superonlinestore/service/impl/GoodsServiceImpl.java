@@ -15,7 +15,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/16/18 11:20
  * @Description:
  */
@@ -31,7 +31,7 @@ public class GoodsServiceImpl implements GoodsService {
        * @param pageable
      　　* @return org.springframework.data.domain.Page<com.synnex.superonlinestore.dao.entity.Goods>
      　　* @throws
-     　　* @author kobef
+     　　* @author dustinl
      　　* @date 11/28/18 10:26
      　　*/
     @Override
@@ -100,7 +100,7 @@ public class GoodsServiceImpl implements GoodsService {
          *
          * @param: [name]模糊查询名字
          * @return: com.synnex.superonlinestore.util.JsonEntity
-         * @auther: kobef
+         * @auther: dustinl
          * @date: 11/20/18 14:51
          */
         return goodsRepository.getGoodsByName(name);

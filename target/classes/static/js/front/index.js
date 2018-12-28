@@ -37,7 +37,7 @@ $(function () {
                     $.each(productList,function (index,item) {
                         products += '<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">' +
                                         '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">' +
-                                            '<img src="../../products/hao/'+item.pic+'" width="130" height="130" style="display: inline-block;">' +
+                                            '<img src="../../products/hao/'+'small0'+item.pic+'" width="130" height="130" style="display: inline-block;">' +
                                         '</a>'+
                                         '<p><a href="product_info.html?gid='+item.gid+'&uid='+uid+'" style="color:#666">'+item.title+'</a></p>'+
                                         '<p><font color="#E4393C" style="font-size:16px">&yen;'+item.price+'</font></p>'+
