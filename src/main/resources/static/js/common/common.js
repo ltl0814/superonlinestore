@@ -52,7 +52,7 @@ $(function () {
                     '<li><a href="../cart.html" id="go_cart">购物车</a></li>' +
                     '</ol>');
                 $("#go_cart").click(function(){
-                    alert("您还为登录，请先登录！");
+                    alert("您还未登录，请先登录！");
                     window.location.href = "../slogin.html";
                     return false;
                 });

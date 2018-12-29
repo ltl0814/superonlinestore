@@ -68,16 +68,23 @@ font {
 <div class="row"> 
 	<div class="col-md-2"></div>
 	<div class="col-md-8" style="background:#fff;padding:40px 80px;margin:30px;border:7px solid #ccc;">
-		<font>会员注册</font>USER REGISTER
+		<font>会员注册中心</font>USER REGISTER CENTER
 		<br /><br />
 		<form class="form-horizontal" style="margin-top:5px;" id="register_form">
 			 <div class="form-group">
-			    <label for="username" class="col-sm-2 control-label">用户名</label>
+			    <label for="loginid" class="col-sm-2 control-label">用户ID</label>
 			    <div class="col-sm-6">
-					<input type="text" name="loginid" class="form-control" id="loginid" placeholder="请输入用户名" style="display: inline-block" />
+					<input type="text" name="loginid" class="form-control" id="loginid" placeholder="请输入用户ID" style="display: inline-block" />
 			    </div>
 				<div id="loginId_fadeback"></div>
 			  </div>
+			 <div class="form-group">
+				 <label for="username" class="col-sm-2 control-label">会员昵称</label>
+				 <div class="col-sm-6">
+					 <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户昵称" style="display: inline-block" />
+				 </div>
+				 <div id="username_feedback"></div>
+			 </div>
 			   <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 			    <div class="col-sm-6">
@@ -97,32 +104,31 @@ font {
 			      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
 			    </div>
 			  </div>
-			 <div class="form-group">
-			    <label for="usercaption" class="col-sm-2 control-label">姓名</label>
-			    <div class="col-sm-6">
-			      <input type="text" name="username" class="form-control" id="usercaption" placeholder="请输入姓名">
-			    </div>
-			  </div>
+			 <!--<div class="form-group">-->
+			    <!--<label for="usercaption" class="col-sm-2 control-label">姓名</label>-->
+			    <!--<div class="col-sm-6">-->
+			      <!--<input type="text" name="username" class="form-control" id="usercaption" placeholder="请输入姓名">-->
+			    <!--</div>-->
+			  <!--</div>-->
 			  
 			  <div class="form-group">
-			    <label for="date" class="col-sm-2 control-label">验证码</label>
+			    <label for="verifyCode" class="col-sm-2 control-label">验证码</label>
 			    <div class="col-sm-3">
-			      <input type="text" class="form-control"  >
-			      
+			      <input type="text" class="form-control" id="verifyCode" name="verifyCode" >
 			    </div>
 			    <div class="col-sm-2">
 			    <img src="./image/captcha.jhtml"/>
 			    </div>
-			    
 			  </div>
 			 
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <input type="submit" id="submit"  width="100" value="注册" name="submit" border="0" class="btn-success"
-				    style=" height:35px;width:100px;color:white;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset"  width="100" value="重新输入" border="0" class="btn-danger"
-						   style="height:35px;width:100px;color:white;">
-			    </div>
+			      <input type="submit" id="submit"  width="100" value="注册" name="submit" border="0" class="btn-success" style=" height:35px;width:100px;color:white;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input type="reset"  width="100" value="重新输入" border="0" class="btn-danger" style="height:35px;width:100px;color:white;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input  type="button" width="100" id="back" value="返回"class="btn-danger" style="height:35px;width:100px;color:white;text-align: center" />
+				</div>
 			  </div>
 			</form>
 	</div>
@@ -131,12 +137,6 @@ font {
   
 </div>
 </div>
-
-	  
-	
-	<div style="margin-top:50px;">
-			<img src="./image/footer.jpg" width="100%" height="78" alt="我们的优势" title="我们的优势" />
-		</div>
 
 		<div style="text-align: center;margin-top: 5px;">
 			<ul class="list-inline">

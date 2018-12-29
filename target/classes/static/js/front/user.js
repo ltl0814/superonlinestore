@@ -1,9 +1,10 @@
-//用户模块api调用
+/**
+ 用户登录
+ */
 $(function(){
-
-    /**
-     * 用户登录
-     */
+    $("#codeImg").click(function () {
+        $("#codeImg").attr("src","http://localhost:8080/public/api/user/getCode?"+Math.random());
+    })
     $("#login").click(function () {
         $.ajax({
            url:"/public/api/user/auth",
@@ -24,8 +25,11 @@ $(function(){
                 }
             }
         });
+        console.log($("#login_form").serialize());
+
         return false;
     });
+
     /**
      * 用户注册
      */
@@ -36,7 +40,7 @@ $(function(){
             data: $("#register_form").serialize(),
             success: function(result){
                 if(result.status){
-                    alert("oh ni gei,安排上了！");
+                    alert(result.msg);
                     window.location.href="../slogin.html";
                 }else{
                     alert(result.msg);
@@ -61,6 +65,7 @@ $(function(){
      */
     $("#loginid").blur(function () {
        var loginId = $(this).val();
+       console.log(loginId);
        var url = "/public/api/user/"+loginId;
        $.getJSON(url,function(result){
            $("#loginId_fadeback").html("");
@@ -70,10 +75,36 @@ $(function(){
                 if(result.msg!=null){
                     $("#loginId_fadeback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;'+result.msg+'</span>');
                 }else{
-                    $("#loginId_fadeback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;输入内容不能为空！</span>');
+                    $("#loginId_fadeback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;用户名不能为空！</span>');
                 }
             }
        })
     });
+
+
+    $("#username").blur(function () {
+        var val=$("#username").val().trim();
+        if (val==null||val==undefined||val==""){
+            $("#username_feedback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;昵称不能为空或空格！</span>');
+        }else {
+            $("#username_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;昵称可用！</span>');
+        }
+    })
+
+    $("#verifyCode").blur(function () {
+        var val=$("#verifyCode").val().trim();
+        if (val==null||val==undefined||val==""){
+            alert("验证码不能为空！");
+            return false;
+        } else if (val.length!=4){
+            alert("验证码只能为四位！");
+            return false;
+        }
+    })
+
+    $("#back").click(function () {
+        window.location.href="../index.html";
+    })
+
 
 })

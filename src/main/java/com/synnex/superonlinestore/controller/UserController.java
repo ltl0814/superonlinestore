@@ -3,16 +3,23 @@ package com.synnex.superonlinestore.controller;
 import com.synnex.superonlinestore.dao.entity.User;
 import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.util.JsonEntity;
+import com.synnex.superonlinestore.util.VerifyUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.awt.image.BufferedImage;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -27,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 @Api(value = "用户Api", description = "用户注册登陆修改密码等")
 @RestController
 @RequestMapping("/public/api")
+@Slf4j
 public class UserController {
     private static final String LockStatus ="2";
     @Autowired
@@ -36,9 +44,10 @@ public class UserController {
 
     @ApiOperation(value = "用户登录", produces = "application/json")
     @PostMapping("/user/auth")
-    public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd,@RequestParam String verifyCode, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je;
         User user = userServiceImp.findByloginid(loginId);
+        log.info("进入用户登录验证");
         if (null!=user){
             if (LockStatus.equals(user.getStatus())){
                 return je = new JsonEntity("账号已冻结！还有："+redisTemplate.getExpire(user.getUsername(), TimeUnit.MINUTES)+"分钟解封！",false);
@@ -89,6 +98,7 @@ public class UserController {
     @GetMapping("/user/{loginid}")
     public JsonEntity registChecking(@PathVariable("loginid") String loginid) {
         JsonEntity je;
+        log.info("loginId:::"+loginid);
         User u = userServiceImp.findByloginid(loginid);
         if (null!=u){
             je = new JsonEntity("用户名已存在",false,null);
@@ -147,6 +157,22 @@ public class UserController {
         return je=new JsonEntity("获取成功！",true,list);
     }
 
+    @ApiOperation("生成验证码")
+    @GetMapping("/user/getCode")
+    public void getCode(HttpServletResponse response, HttpServletRequest request) throws Exception{
+        HttpSession session=request.getSession();
+        //利用图片工具生成图片
+        //第一个参数是生成的验证码，第二个参数是生成的图片
+        Object[] objs = VerifyUtil.createImage();
+        //将验证码存入Session
+        session.setAttribute("imageCode",objs[0]);
+
+        //将图片输出给浏览器
+        BufferedImage image = (BufferedImage) objs[1];
+        response.setContentType("image/png");
+        OutputStream os = response.getOutputStream();
+        ImageIO.write(image, "png", os);
+    }
 
 }
 
