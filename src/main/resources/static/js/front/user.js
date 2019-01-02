@@ -2,9 +2,11 @@
  用户登录
  */
 $(function(){
+
     $("#codeImg").click(function () {
         $("#codeImg").attr("src","http://localhost:8080/public/api/user/getCode?"+Math.random());
     })
+
     $("#login").click(function () {
         $.ajax({
            url:"/public/api/user/auth",
@@ -44,6 +46,8 @@ $(function(){
                     window.location.href="../slogin.html";
                 }else{
                     alert(result.msg);
+                    console.log(result.data);
+                    $("#regist_feedback").html('<span style="color: red;margin-top: 10px;font-size: 150%;margin-left: 200px" >'+result.data[0]+'</span>');
                 }
             }
         });
@@ -61,11 +65,17 @@ $(function(){
     });
 
     /*
-      * loginId校验
+     * loginId校验
      */
+
     $("#loginid").blur(function () {
-       var loginId = $(this).val();
+        $("#loginId_fadeback").html("");
+       var loginId = $(this).val().trim();
        console.log(loginId);
+       if (loginId==""||loginId==undefined||loginId==null){
+           $("#loginId_fadeback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;用户名不能为空！</span>');
+           return false;
+       }
        var url = "/public/api/user/"+loginId;
        $.getJSON(url,function(result){
            $("#loginId_fadeback").html("");
@@ -81,13 +91,12 @@ $(function(){
        })
     });
 
-
     $("#username").blur(function () {
         var val=$("#username").val().trim();
         if (val==null||val==undefined||val==""){
             $("#username_feedback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;昵称不能为空或空格！</span>');
         }else {
-            $("#username_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;昵称可用！</span>');
+            $("#username_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;昵称可用</span>');
         }
     })
 
@@ -99,12 +108,23 @@ $(function(){
         } else if (val.length!=4){
             alert("验证码只能为四位！");
             return false;
+        }else {
+            $.ajax({
+                url:"/public/api/user/validate",
+                type:"POST",
+                data: {verifyCode:$("#verifyCode").val()},
+                success: function(result){
+                    if(result.status){
+                        $("#code_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;'+result.msg+'</span>');
+                    }else{
+                        $("#code_feedback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;'+result.msg+'</span>');
+                    }
+                }
+            })
         }
     })
 
     $("#back").click(function () {
         window.location.href="../index.html";
     })
-
-
 })

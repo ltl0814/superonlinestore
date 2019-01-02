@@ -31,10 +31,10 @@ import java.util.UUID;
 @Slf4j
 @Api(value = "商品管理", description = "curd")
 public class GoodsController {
+
     @Autowired
     GoodsService goodsService;
 
-    //后台查询全部商品
     @ApiOperation(value = "后台查询全部商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods")
     public JsonEntity getAllGoods(@RequestParam(value = "start",defaultValue = "0")int start,
@@ -55,7 +55,6 @@ public class GoodsController {
         return new JsonEntity("查询全部商品成功",true,goodsService.getAllGoods(spec,pageable));
     }
 
-    //后台添加商品
     @ApiOperation(value = "后台添加商品", produces = "application/json")
     @PostMapping("/public/api/backend/goods")
     public JsonEntity addGoods(Goods goods, @RequestParam(value = "file",required = false)MultipartFile file) throws IOException {
@@ -79,7 +78,6 @@ public class GoodsController {
         return new JsonEntity( "添加成功",true, goodsService.addGoods(goods));
     }
 
-    //后台查询单个商品
     @ApiOperation(value = "后台查询单个商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods/{gid}")
     public JsonEntity getGoods(@PathVariable("gid") int gid){
@@ -87,14 +85,13 @@ public class GoodsController {
         return new JsonEntity("查询单个商品成功",true, goodsService.findone(gid));
     }
 
-    //后台编辑单个商品
     @ApiOperation(value = "后台商品编辑", produces = "application/json")
     @PutMapping("/public/api/backend/goods")
     public JsonEntity setGoods(Goods goods){
         return new JsonEntity("商品编辑成功",true,goodsService.saveGoods(goods));
     }
 
-    //查询商品列表，通过LIST
+
     @ApiOperation(value = "根据gIdList查询商品列表", produces = "application/json")
     @GetMapping("/public/api/goods")
     public JsonEntity GetGoodsListByGid(@RequestParam List<Integer> gIdList){
@@ -117,16 +114,16 @@ public class GoodsController {
                 ,true,goodsService.getByLikeName(name));
     }
 
-    @ApiOperation(value = "查询最热的10个商品", produces = "application/json")
+    @ApiOperation(value = "查询最热的12个商品", produces = "application/json")
     @GetMapping("/public/api/goods/stock")
     public JsonEntity getGoodsListByStock(){
         log.info("进入查询");
-        return new JsonEntity("查询最热的10个商品",true, goodsService.getHotGoods());
+        return new JsonEntity("查询最热的12个商品",true, goodsService.getHotGoods());
     }
 
     @ApiOperation(value = "根据商品gid删除商品", produces = "application/json")
     @DeleteMapping("/public/api/goods/{gid}")
-    public JsonEntity deletGoodsById(@PathVariable("gid") Integer gid){
+    public JsonEntity deleteGoodsById(@PathVariable("gid") Integer gid){
         goodsService.deleteGoods(gid);
         log.info("删除商品："+gid);
         JsonEntity jsonEntity=new JsonEntity("删除商品"+gid+"成功",true, null);

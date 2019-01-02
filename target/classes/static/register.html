@@ -33,94 +33,72 @@ font {
  </style>
 </head>
 <body>
-
-
-
-
 			<!--
             	时间：2015-12-30
             	描述：菜单栏
             -->
 			<div class="container-fluid">
 				<div class="col-md-3" id="logo">
-					<!--<a href="index.html">-->
-					<!--<img src="img/logo2.png" />-->
-					<!--</a>-->
+
 				</div>
 				<div class="col-md-5">
 					<img src="img/header.png" />
 				</div>
 				<div class="col-md-3" style="padding-top:20px" id="checking_login">
-					<!--<ol class="list-inline">-->
-					<!--<li><a href="slogin.html">登录</a></li>-->
-					<!--<li><a href="register.html">注册</a></li>-->
-					<!--<li><a href="cart.html">购物车</a></li>-->
-					<!--</ol>-->
+
 				</div>
 			</div>
-
 	<br /><br />
-
-
-
-
 <div class="container" style="width:100%;background:url('image/regist_bg.jpg');">
 <div class="row"> 
 	<div class="col-md-2"></div>
 	<div class="col-md-8" style="background:#fff;padding:40px 80px;margin:30px;border:7px solid #ccc;">
 		<font>会员注册中心</font>USER REGISTER CENTER
-		<br /><br />
+		<br/><br />
 		<form class="form-horizontal" style="margin-top:5px;" id="register_form">
-			 <div class="form-group">
-			    <label for="loginid" class="col-sm-2 control-label">用户ID</label>
+
+			<div class="form-group">
+				 <label for="loginid" class="col-sm-2 control-label">用户ID</label>
 			    <div class="col-sm-6">
-					<input type="text" name="loginid" class="form-control" id="loginid" placeholder="请输入用户ID" style="display: inline-block" />
+					<input type="text" name="loginid" class="form-control" id="loginid" placeholder="请输入用户ID(四位以上的纯数字)" style="display: inline-block" />
 			    </div>
 				<div id="loginId_fadeback"></div>
-			  </div>
+			</div>
 			 <div class="form-group">
 				 <label for="username" class="col-sm-2 control-label">会员昵称</label>
 				 <div class="col-sm-6">
-					 <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户昵称" style="display: inline-block" />
+					 <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户昵称(不能为空)" style="display: inline-block" />
 				 </div>
 				 <div id="username_feedback"></div>
 			 </div>
 			   <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 			    <div class="col-sm-6">
-			      <input type="password" name="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
+			      <input type="password" name="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码(至少六位)">
 			    </div>
 			  </div>
 			   <div class="form-group">
-			    <label for="confirmpwd" class="col-sm-2 control-label">确认密码</label>
+			    <label for="confirmpwd"  class="col-sm-2 control-label">确认密码</label>
 			    <div class="col-sm-6">
-			      <input type="password" class="form-control" id="confirmpwd" placeholder="请输入确认密码">
+			      <input type="password" name="confirmpwd" class="form-control" id="confirmpwd" placeholder="请输入确认密码(两次密码必须一致)">
 			    </div>
 				   <div id="pwd_fadeback"></div>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 			    <div class="col-sm-6">
-			      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+			      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="请输入正确的邮箱的地址">
 			    </div>
 			  </div>
-			 <!--<div class="form-group">-->
-			    <!--<label for="usercaption" class="col-sm-2 control-label">姓名</label>-->
-			    <!--<div class="col-sm-6">-->
-			      <!--<input type="text" name="username" class="form-control" id="usercaption" placeholder="请输入姓名">-->
-			    <!--</div>-->
-			  <!--</div>-->
-			  
-			  <div class="form-group">
-			    <label for="verifyCode" class="col-sm-2 control-label">验证码</label>
-			    <div class="col-sm-3">
-			      <input type="text" class="form-control" id="verifyCode" name="verifyCode" >
-			    </div>
-			    <div class="col-sm-2">
-			    <img src="./image/captcha.jhtml"/>
-			    </div>
+			  <div class="form-group" >
+				  <label for="verifyCode" class="col-sm-2 control-label">验证码</label>
+				  <div class="col-sm-3" >
+					  <input type="text"  class="form-control" name="verifyCode" id="verifyCode" >
+				  </div>
+				  <img id="codeImg" src="http://localhost:8080/public/api/user/getCode" style="float: left"/>
+				  <div id="code_feedback"></div>
 			  </div>
-			 
+
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <input type="submit" id="submit"  width="100" value="注册" name="submit" border="0" class="btn-success" style=" height:35px;width:100px;color:white;">
@@ -130,14 +108,14 @@ font {
 				  <input  type="button" width="100" id="back" value="返回"class="btn-danger" style="height:35px;width:100px;color:white;text-align: center" />
 				</div>
 			  </div>
-			</form>
+			<div class="form-group">
+				<div id="regist_feedback" ></div>
+			</div>
+		</form>
 	</div>
-	
 	<div class="col-md-2"></div>
-  
 </div>
 </div>
-
 		<div style="text-align: center;margin-top: 5px;">
 			<ul class="list-inline">
 				<li><a>关于我们</a></li>
@@ -151,7 +129,7 @@ font {
 				<li><a>广告声明</a></li>
 			</ul>
  		<div style="text-align: center;margin-top: 5px;margin-bottom:20px;">
-			Copyright &copy; 2018-2088 Fizh Dastin Kobe Lambert 版权所有
+			Copyright &copy; 2018-2088 Dustin Li 版权所有
 		</div>
 
 </body>

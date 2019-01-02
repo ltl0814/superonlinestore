@@ -20,7 +20,7 @@ $(function () {
                 var loginedId = currentUser.loginid;
                 var loginedUid = currentUser.uid;
                 $("#logo").html('<a href="../index.html?uid='+loginedUid+'">' +
-                    '<img src="img/logo2.png" />' +
+                    '<img src="img/logo1.png" />' +
                     '</a>');
                 $("#checking_login").html('<ol class="list-inline">' +
                     '<li>欢迎您，<a href="#">'+currentUser.username+'</a></li>' +
@@ -33,7 +33,7 @@ $(function () {
                     var url = "/public/api/user/out?loginId="+loginedId;
                     $.getJson(url,function (result) {
                         if(result.status){
-                            alert("congraduations,成功退出！");
+                            alert("成功退出！");
                             window.location.href = "../slogin.html";
                             return false;
                         }else{
@@ -44,7 +44,7 @@ $(function () {
                 });
             }else{
                 $("#logo").html('<a href="../index.html">' +
-                    '<img src="img/logo2.png" />' +
+                    '<img src="img/logo1.png" />' +
                     '</a>');
                 $("#checking_login").html('<ol class="list-inline">' +
                     '<li><a href="../slogin.html">登录</a></li>' +

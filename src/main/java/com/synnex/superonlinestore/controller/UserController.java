@@ -69,7 +69,6 @@ public class UserController {
     @ApiOperation(value = "用户注册",produces = "application/json")
     @PostMapping("/user")
     public JsonEntity userRegist(@Valid User user, BindingResult result) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-
         JsonEntity je;
         if (result.hasErrors()){
             List<String> errlist = new ArrayList<>();
@@ -164,7 +163,7 @@ public class UserController {
         //利用图片工具生成图片
         //第一个参数是生成的验证码，第二个参数是生成的图片
         Object[] objs = VerifyUtil.createImage();
-        //将验证码存入Session
+        //将验证码存入Session方便以后的验证
         session.setAttribute("imageCode",objs[0]);
 
         //将图片输出给浏览器
@@ -174,6 +173,20 @@ public class UserController {
         ImageIO.write(image, "png", os);
     }
 
+    @ApiOperation("验证码的校验")
+    @PostMapping("/user/validate")
+    public JsonEntity validateVerifyCode(HttpSession session,String verifyCode){
+        JsonEntity je;
+        String imageCode = (String) session.getAttribute("imageCode");
+        log.info(verifyCode);
+        if (imageCode.equalsIgnoreCase(verifyCode)){
+            je = new JsonEntity("验证码正确！",true);
+            return je;
+        }else {
+            je = new JsonEntity("错误的验证码！",false);
+            return je;
+        }
+    }
 }
 
 

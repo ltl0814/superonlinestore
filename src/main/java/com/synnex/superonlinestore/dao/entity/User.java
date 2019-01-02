@@ -29,7 +29,7 @@ public class User implements Serializable {
     @NotBlank(message = "名字不能为空！")
     private String username;
 
-    @Length(min = 4,message = "长度至少为4位！")
+    @Length(min = 4,message = "用户ID长度至少为4位！")
     private String loginid;
 
     @Length(min = 6,message = "密码长度至少为6位！")
