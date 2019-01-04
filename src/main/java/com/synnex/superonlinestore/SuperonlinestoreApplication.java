@@ -13,6 +13,5 @@ public class SuperonlinestoreApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SuperonlinestoreApplication.class, args);
-
     }
 }
