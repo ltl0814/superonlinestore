@@ -25,6 +25,7 @@ public class MyControllerAdvice {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public ModelAndView javaExceptionHandler(Exception e){
+        e.printStackTrace();
        ModelAndView modelAndView = new ModelAndView();
        modelAndView.setViewName("error");
        modelAndView.addObject("msg",e.getMessage());

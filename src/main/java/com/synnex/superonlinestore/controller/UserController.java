@@ -171,7 +171,6 @@ public class UserController {
         Object[] objs = VerifyUtil.createImage();
         //将验证码存入Session方便以后的验证
         session.setAttribute("imageCode",objs[0]);
-
         //将图片输出给浏览器
         BufferedImage image = (BufferedImage) objs[1];
         response.setContentType("image/png");
@@ -193,6 +192,7 @@ public class UserController {
             return je;
         }
     }
+
     @GetMapping("/exception/test")
     @ApiOperation("测试全局异常")
     public void testException(){
