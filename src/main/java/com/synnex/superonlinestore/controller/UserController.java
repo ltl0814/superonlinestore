@@ -11,7 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +51,7 @@ public class UserController {
     @ApiOperation(value = "用户登录", produces = "application/json")
     @PostMapping("/user/auth")
     public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd,@RequestParam String verifyCode, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        JsonEntity je;
+        JsonEntity je = null;
         User user = userServiceImp.findByloginid(loginId);
         log.info("进入用户登录验证");
         if (null!=user){
@@ -186,6 +192,11 @@ public class UserController {
             je = new JsonEntity("错误的验证码！",false);
             return je;
         }
+    }
+    @GetMapping("/exception/test")
+    @ApiOperation("测试全局异常")
+    public void testException(){
+        System.out.println(100/0);
     }
 }
 

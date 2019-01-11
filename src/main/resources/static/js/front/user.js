@@ -15,7 +15,9 @@ $(function(){
             success:function (result) {
                 if(result.status){
                     window.location.href="../index.html?uid="+result.data.uid;
-                }else{
+                }else if (result.code==404){
+                    window.location.href="../"+result.url;
+                } else{
                     $("#errMsg").html("");
                     if(result.data != null){
                         $("#errMsg").html('<span style="color: red;margin-left: 70px;">'+result.data+'</span>');
@@ -44,8 +46,9 @@ $(function(){
                 if(result.status){
                     alert(result.msg);
                     window.location.href="../slogin.html";
-                }else{
-                    alert(result.msg);
+                }else if (result.code==404){
+                    window.location.href="../"+result.url;
+                } else{
                     console.log(result.data);
                     $("#regist_feedback").html('<span style="color: red;margin-top: 10px;font-size: 150%;margin-left: 200px" >'+result.data[0]+'</span>');
                 }

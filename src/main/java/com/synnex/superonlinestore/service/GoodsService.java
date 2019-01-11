@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.List;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/16/18 09:25
  * @Description: 商品服务
  */
@@ -40,7 +40,7 @@ public interface GoodsService {
      *
      * @param:
      * @return:
-     * @auther: kobef
+     * @auther: dustinl
      * @date: 11/20/18 14:11
      */
     public List<Goods> getRecentGoods();

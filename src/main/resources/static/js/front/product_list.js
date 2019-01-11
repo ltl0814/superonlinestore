@@ -4,7 +4,7 @@ $(function(){
     var name = getQueryString("name");
     var page = getQueryString("page");
     if(name == null||name.length == 0){
-        queryAll(page-1,2);
+        queryAll(page-1,5);
     } else{
         queryByName(name);
     }
