@@ -2,59 +2,70 @@
  用户登录
  */
 $(function(){
+    var verifycodevalidate = false;
 
     $("#codeImg").click(function () {
         $("#codeImg").attr("src","http://localhost:8080/public/api/user/getCode?"+Math.random());
     })
 
     $("#login").click(function () {
-        $.ajax({
-           url:"/public/api/user/auth",
-            type:"POST",
-            data:$("#login_form").serialize(),
-            success:function (result) {
-                if(result.status){
-                    window.location.href="../index.html?uid="+result.data.uid;
-                }else if (result.code==404){
-                    window.location.href="../"+result.url;
-                } else{
-                    $("#errMsg").html("");
-                    if(result.data != null){
-                        $("#errMsg").html('<span style="color: red;margin-left: 70px;">'+result.data+'</span>');
-                    }else{
-                        $("#errMsg").html('<span style="color: red;margin-left: 70px;">'+result.msg+'</span>');
+        if(verifycodevalidate){
+            $.ajax({
+                url:"/public/api/user/auth",
+                type:"POST",
+                data:$("#login_form").serialize(),
+                success:function (result) {
+                    if(result.status){
+                        window.location.href="../index.html?uid="+result.data.uid;
+                    } else{
+                        $("#errMsg").html("");
+                        if(result.data != null){
+                            $("#errMsg").html('<span style="color: red;margin-left: 70px;">'+result.data+'</span>');
+                        }else{
+                            $("#errMsg").html('<span style="color: red;margin-left: 70px;">'+result.msg+'</span>');
+                        }
+                        $("#verifyCode").val("");
+                        $("#inputPassword3").val("");
+                        $("#codeImg").attr("src","http://localhost:8080/public/api/user/getCode?"+Math.random());
                     }
-                    $("#username").val("");
-                    $("#inputPassword3").val("");
                 }
-            }
-        });
-        console.log($("#login_form").serialize());
-
-        return false;
+            });
+            verifycodevalidate=false;
+            console.log($("#login_form").serialize());
+            console.log(verifycodevalidate);
+            return false;
+        }else {
+            alert("验证码不正确！")
+            return false;
+        }
     });
 
     /**
      * 用户注册
      */
     $("#submit").click(function () {
-        $.ajax({
-            url:"/public/api/user",
-            type:"POST",
-            data: $("#register_form").serialize(),
-            success: function(result){
-                if(result.status){
-                    alert(result.msg);
-                    window.location.href="../slogin.html";
-                }else if (result.code==404){
-                    window.location.href="../"+result.url;
-                } else{
-                    console.log(result.data);
-                    $("#regist_feedback").html('<span style="color: red;margin-top: 10px;font-size: 150%;margin-left: 200px" >'+result.data[0]+'</span>');
+        if(verifycodevalidate) {
+            $.ajax({
+                url: "/public/api/user",
+                type: "POST",
+                data: $("#register_form").serialize(),
+                success: function (result) {
+                    if (result.status) {
+                        alert("注册成功！");
+                        verifycodevalidate = false;
+                        window.location.href = "../slogin.html";
+                    } else if (result.code == 404) {
+                        window.location.href = "../" + result.url;
+                    } else {
+                        console.log(result.data);
+                        $("#regist_feedback").html('<span style="color: red;margin-top: 10px;font-size: 150%;margin-left: 200px" >' + result.data[0] + '</span>');
+                    }
                 }
-            }
-        });
-        return false;
+            });
+        }else {
+            alert("验证码不正确！");
+            return false;
+        }
     });
 
     /**
@@ -67,10 +78,9 @@ $(function(){
         }
     });
 
-    /*
+    /**
      * loginId校验
      */
-
     $("#loginid").blur(function () {
         $("#loginId_fadeback").html("");
        var loginId = $(this).val().trim();
@@ -118,8 +128,10 @@ $(function(){
                 data: {verifyCode:$("#verifyCode").val()},
                 success: function(result){
                     if(result.status){
+                        verifycodevalidate = true;
                         $("#code_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;'+result.msg+'</span>');
                     }else{
+                        verifycodevalidate = false;
                         $("#code_feedback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;'+result.msg+'</span>');
                     }
                 }
@@ -130,4 +142,5 @@ $(function(){
     $("#back").click(function () {
         window.location.href="../index.html";
     })
+
 })
