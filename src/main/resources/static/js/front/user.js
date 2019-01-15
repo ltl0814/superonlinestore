@@ -2,12 +2,19 @@
  用户登录
  */
 $(function(){
+
     var verifycodevalidate = false;
+
+    if ($.cookie("rmbUser") == "true") {
+        $("#rememberMe").attr("checked", true);
+        $("#username").val($.cookie("username"));
+    }
 
     $("#codeImg").click(function () {
         $("#codeImg").attr("src","http://localhost:8080/public/api/user/getCode?"+Math.random());
     })
 
+    // 用户登陆
     $("#login").click(function () {
         if(verifycodevalidate){
             $.ajax({
@@ -16,6 +23,7 @@ $(function(){
                 data:$("#login_form").serialize(),
                 success:function (result) {
                     if(result.status){
+                        save();
                         window.location.href="../index.html?uid="+result.data.uid;
                     } else{
                         $("#errMsg").html("");
@@ -54,13 +62,16 @@ $(function(){
                         alert("注册成功！");
                         verifycodevalidate = false;
                         window.location.href = "../slogin.html";
-                    } else if (result.code == 404) {
-                        window.location.href = "../" + result.url;
                     } else {
-                        console.log(result.data);
+                        console.log("1111");
                         $("#regist_feedback").html('<span style="color: red;margin-top: 10px;font-size: 150%;margin-left: 200px" >' + result.data[0] + '</span>');
                     }
-                }
+                },
+                error: function(XMLHttpRequest, textStatus,errorThrown) {
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                    },
             });
         }else {
             alert("验证码不正确！");
@@ -72,9 +83,11 @@ $(function(){
      * 密码比对
      */
     $("#confirmpwd").blur(function(){
-        $("#pwd_fadeback").html("");
+        $("#pwd_feedback").html("");
         if($(this).val()!=$("#inputPassword3").val()){
-             $("#pwd_fadeback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;两次输入密码不一致！</span>');
+             $("#pwd_feedback").html('<span style="color: red;margin-top: 10px;" class="glyphicon glyphicon-remove">&nbsp;两次输入密码不一致！</span>');
+        }else {
+            $("#pwd_feedback").html('<span style="color: green;margin-top: 10px;" class="glyphicon glyphicon-ok">&nbsp;两次密码一致！</span>')
         }
     });
 
@@ -142,5 +155,22 @@ $(function(){
     $("#back").click(function () {
         window.location.href="../index.html";
     })
+
+    //记住用户名密码
+    function save() {
+
+        if ($("#rememberMe").prop("checked")) {
+            var str_username = $("#username").val();//用户名
+            var str_password = $("#inputPassword3").val();//密码
+            alert(str_username);
+            $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
+            $.cookie("username", str_username, { expires: 7 });
+            $.cookie("password", str_password, { expires: 7 });
+        } else {
+            $.cookie("rmbUser", "false", { expire: -1 });
+            $.cookie("username", "", { expires: -1 });
+            $.cookie("password", "", { expires: -1 });
+        }
+    };
 
 })

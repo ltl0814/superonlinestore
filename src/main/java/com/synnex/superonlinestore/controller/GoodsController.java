@@ -23,13 +23,13 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/16/18 17:15
  * @Description:
  */
 @RestController
 @Slf4j
-@Api(value = "商品管理", description = "curd")
+@Api(value = "商品管理", description = "商品的crud")
 public class GoodsController {
 
     @Autowired
