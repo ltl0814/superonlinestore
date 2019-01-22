@@ -13,6 +13,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -129,5 +130,11 @@ public class GoodsController {
         JsonEntity jsonEntity=new JsonEntity("删除商品"+gid+"成功",true, null);
         return jsonEntity;
     }
-
+    @ApiOperation("后台管理界面映射")
+    @GetMapping("/backend")
+    public ModelAndView backend(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/Administer/index");
+        return mv;
+    }
 }

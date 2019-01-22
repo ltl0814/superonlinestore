@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -193,11 +194,12 @@ public class UserController {
         }
     }
 
-    @GetMapping("/exception/test")
     @ApiOperation("测试全局异常")
+    @GetMapping("/exception/test")
     public void testException(){
         System.out.println(100/0);
     }
+
 }
 
 

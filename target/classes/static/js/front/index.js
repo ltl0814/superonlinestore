@@ -6,6 +6,10 @@ $(function () {
     //checkingUser(currentUid);
     initIndexNewly();
     initHotGoods();
+
+
+
+
     /**
      * 模糊查找功能-->页面跳转
      */

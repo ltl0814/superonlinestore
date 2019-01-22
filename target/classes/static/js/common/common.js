@@ -40,7 +40,6 @@ $(function () {
                             alert(result.msg);
                         }
                     });
-
                 });
             }else{
                 $("#logo").html('<a href="../index.html">' +
