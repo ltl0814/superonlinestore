@@ -52,8 +52,11 @@ public class CartController {
     @RequestMapping(value = "/public/api/user/{uid}/cart/list", method = {RequestMethod.GET})
     public JsonEntity payCart(@PathVariable("uid")int uid) {
         boolean result = cartService.payCart(uid);
-        if (result) return new  JsonEntity("结算成功",true);
-        else return new  JsonEntity("库存不足",false);
+        if (result) {
+            return new  JsonEntity("结算成功",true);
+        } else {
+            return new  JsonEntity("库存不足",false);
+        }
 
     }
 

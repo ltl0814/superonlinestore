@@ -200,6 +200,15 @@ public class UserController {
         System.out.println(100/0);
     }
 
+    @ApiOperation("获取所有用户")
+    @GetMapping("/user/all")
+    public List<User> getAllUsers(){
+        List<User> list;
+
+        list = userServiceImp.getAllUsers();
+
+        return list;
+    }
 }
 
 

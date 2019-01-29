@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 /**
  * @Author: Dustin Li
@@ -34,5 +35,7 @@ public interface UserService {
     JsonEntity updateUserByloginid(User user,HttpSession session);
 
     void deleteSession(String loginId,HttpSession session);
+
+    List<User> getAllUsers();
 }
 

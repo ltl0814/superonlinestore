@@ -23,6 +23,8 @@ public class OrderServiceImp implements OrderService {
     OrderRepository orderRepository;
     @Autowired
     GoRepository goRepository;
+    @Autowired
+    UserServiceImp userServiceImp;
 
     @Override
     public List<DetailResult> userOrder(int uid) {
@@ -49,11 +51,13 @@ public class OrderServiceImp implements OrderService {
 
     public void helper(List<Order> orders,List<DetailResult> results){
         for (Order order:orders) {
-            User user = userRepository.findByUid(order.getUid());
+            User user = userRepository.findByloginid(order.getUid()+"");
             List<GoodsDetail> goodsDetails = new ArrayList<>();
             List<Db_Go> gos = goRepository.findAllByOid(order.getOid());
             List<Integer> gids = new ArrayList<>();
-            for(Db_Go db_go: gos )gids.add(db_go.getGid());
+            for(Db_Go db_go: gos ) {
+                gids.add(db_go.getGid());
+            }
             List<Goods> goods = goodsRepository.findAllByGidIn(gids);
 
             double sum = 0;

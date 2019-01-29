@@ -6,12 +6,14 @@ import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import com.synnex.superonlinestore.util.Md5SaltTool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -109,4 +111,8 @@ public class UserServiceImp implements UserService {
         session.removeAttribute(loginId);
     }
 
+    @Override
+    public List<User> getAllUsers(){
+      return  userRepository.findAll();
+    }
 }

@@ -47,8 +47,9 @@ public class CartServiceImp implements CartService {
     public void editCount(int uid, int gid,int newCount) {
         Db_Cart cart = cartRepository.findByUidAndGid(uid,gid);
         Goods goods = goodsRepository.findByGid(gid);
-        if (newCount < 1) cartRepository.deleteByUidAndGid(uid, gid);
-        else {
+        if (newCount < 1) {
+            cartRepository.deleteByUidAndGid(uid, gid);
+        } else {
             cart.setCount(newCount);
             cart.setSubtotal(newCount * goods.getPrice());
             cartRepository.save(cart);
@@ -73,7 +74,9 @@ public class CartServiceImp implements CartService {
         List<GoodsDetail> goodsDetails = result.getList();
 
         List<Integer> gids = new ArrayList<>();
-        for(GoodsDetail detail: goodsDetails )gids.add(detail.getGid());
+        for(GoodsDetail detail: goodsDetails ) {
+            gids.add(detail.getGid());
+        }
         List<Goods> goods = goodsRepository.findAllByGidIn(gids);
 
         //判断库存
@@ -118,7 +121,9 @@ public class CartServiceImp implements CartService {
         List<Db_Cart> list = cartRepository.findAllByUid(uid);
         User user = userRepository.findByUid(uid);
         List<Integer> gids = new ArrayList<>();
-        for(Db_Cart db_cart: list )gids.add(db_cart.getGid());
+        for(Db_Cart db_cart: list ) {
+            gids.add(db_cart.getGid());
+        }
         List<Goods> goods = goodsRepository.findAllByGidIn(gids);
         List<GoodsDetail> goodsDetails = new ArrayList<>();
         double sum = 0;
