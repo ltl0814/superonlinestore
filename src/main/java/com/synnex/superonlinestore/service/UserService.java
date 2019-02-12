@@ -29,7 +29,7 @@ public interface UserService {
     int updateStatusByloginid(String loginid, String status);
 
     //修改密码
-    JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
+    JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd, String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     //修改用户信息
     JsonEntity updateUserByloginid(User user,HttpSession session);

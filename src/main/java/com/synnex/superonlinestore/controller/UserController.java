@@ -115,7 +115,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "修改密码",produces = "application/json")
-    @PutMapping("/user/{loginId}/pwd")
+    @PostMapping("/user/{loginId}/pwd")
     public JsonEntity updatePwd(@PathVariable String loginId,@RequestParam String oldPwd,@RequestParam String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
@@ -123,7 +123,7 @@ public class UserController {
             if (status.equals(LockStatus)){
                 return new JsonEntity("账号处于冻结状态",false);
             }else {
-                return userServiceImp.updatePwdByloginid(loginId,oldPwd,newPwd);
+                return userServiceImp.updatePwdByloginid(loginId,user.getPwd(),oldPwd,newPwd);
             }
         }else {
             return new JsonEntity("账号不存在！",false);
@@ -185,7 +185,8 @@ public class UserController {
         JsonEntity je;
         String imageCode = (String) session.getAttribute("imageCode");
         log.info(verifyCode);
-        if (imageCode.equalsIgnoreCase(verifyCode)){
+        log.info(imageCode);
+        if (verifyCode.equalsIgnoreCase(imageCode)){
             je = new JsonEntity("验证码正确！",true);
             return je;
         }else {

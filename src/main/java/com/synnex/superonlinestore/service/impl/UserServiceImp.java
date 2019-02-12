@@ -6,7 +6,6 @@ import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import com.synnex.superonlinestore.util.Md5SaltTool;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -81,10 +80,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public JsonEntity updatePwdByloginid(String loginid, String oldpwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        Boolean flag = Md5SaltTool.validPassword(newpwd,oldpwd);
+    public JsonEntity updatePwdByloginid(String loginId, String pwdInDb, String oldPwd, String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Boolean flag = Md5SaltTool.validPassword(oldPwd,pwdInDb);
         if (flag){
-             userRepository.updatePwdByloginid(loginid,newpwd);
+            newPwd=Md5SaltTool.getEncryptedPwd(newPwd);
+             userRepository.updatePwdByloginid(loginId,newPwd);
              return new JsonEntity("修改成功",true);
         }else {
              return new JsonEntity("修改失败！输入原密码不正确！",false);
