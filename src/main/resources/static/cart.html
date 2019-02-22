@@ -64,7 +64,7 @@
 			<div class="row">
 
 				<div style="margin:0 auto; margin-top:10px;width:950px;" id="cart_content">
-					<strong style="font-size:16px;margin:5px 0;">订单详情</strong>
+					<strong style="font-size:16px;margin:5px 0;">购物车详情</strong>
 					<table class="table table-bordered">
 						<tbody id="cart_item">
 						<tr class="warning">
@@ -84,7 +84,7 @@
 				<div style="text-align:right;">
 					<em style="color:#ff6600;">
 				登录后确认是否享有优惠&nbsp;&nbsp;
-			</em> 赠送积分: <em style="color:#ff6600;" id="credits"></em>&nbsp; 商品金额: <strong id="sum" style="color:#ff6600;"></strong>
+			</em> 赠送积分: <em style="color:#ff6600;" id="credits"></em>&nbsp; 商品金额: ￥<strong id="sum" style="color:#ff6600;"></strong>
 				</div>
 				<div style="text-align:right;margin-top:10px;margin-bottom:10px;">
 					<a href="order_info.html" id="clear" class="clear">清空购物车</a>
@@ -115,10 +115,18 @@
 			</ul>
 		</div>
 		<div style="text-align: center;margin-top: 5px;margin-bottom:20px;">
-			Copyright &copy; 2018-2088 Fizh Dastin Kobe Lambert 版权所有
+			Copyright &copy; 2018-2088  Dustin   版权所有
 		</div>
 
 	</body>
+	<script type="text/javascript">
+        function reTotal() {
+			var p = $("#price").attr("desc");
+			var q = $("#quantity").val();
+			var sum = p * q;
+            $("#subtotal").text("￥"+sum);
+        }
+	</script>
 	<script type="application/javascript" src="js/common/common.js"></script>
 	<script type="application/javascript" src="js/front/cart.js"></script>
 </html>

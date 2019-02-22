@@ -13,6 +13,7 @@ $(function () {
    $.getJSON(url,function (result) {
         if(result.status){
             var product = result.data;
+            $("#productName").html("<a>"+product.title+"</a>");
             $("#pro_img").html('<img style="opacity: 1;width:400px;height:350px;" title="" class="medium" src="../../products/hao/'+product.pic+'">');
             $("#title").html("<strong>"+product.title+"</strong>");
             $("#gid").html("编号："+product.gid);
@@ -36,9 +37,9 @@ $(function () {
                 type: "POST",
                 success:function (result) {
                     if(result.status){
-                        alert("成了，添加上了。");
+                        alert("添加成功！");
                     }else{
-                        alert("失败！");
+                        alert("添加失败！");
                     }
                 }
             })

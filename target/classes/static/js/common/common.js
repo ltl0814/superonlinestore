@@ -23,23 +23,28 @@ $(function () {
                     '<img src="img/logo1.png" />' +
                     '</a>');
                 $("#checking_login").html('<ol class="list-inline">' +
-                    '<li>欢迎您，<a href="#">'+currentUser.username+'</a></li>' +
-                    '<li><a href="../slogin.html" id="logout">退出登录</a> </li>'+
+                    '<li>欢迎您，'+currentUser.username+'</li>' +
                     '<li><a href="../order_list.html?uid='+loginedUid+'">我的订单</a></li>' +
                     '<li><a href="../cart.html?uid='+loginedUid+'">购物车</a></li>' +
+                    '<li><a href="../update.html?loginId='+loginedId+'">修改密码</a></li>' +
+                    '<li><a href="#" id="logout">退出登录</a> </li>'+
                     '</ol>');
 
                 $("#logout").click(function () {
-                    var url = "/public/api/user/out?loginId="+loginedId;
-                    $.getJson(url,function (result) {
-                        if(result.status){
-                            alert("成功退出！");
-                            window.location.href = "../slogin.html";
-                            return false;
-                        }else{
-                            alert(result.msg);
-                        }
-                    });
+                    if (confirm("是否确定退出登录？")){
+                        var url = "/public/api/user/out?loginId="+loginedId;
+                        $.getJSON(url,function (result) {
+                            if(result.status){
+                                alert("成功退出！");
+                                window.location.href = "../slogin.html";
+                                return false;
+                            }else{
+                                alert(result.msg);
+                            }
+                        });
+                    }else {
+                        alert("退出失败！");
+                    }
                 });
             }else{
                 $("#logo").html('<a href="../index.html">' +
