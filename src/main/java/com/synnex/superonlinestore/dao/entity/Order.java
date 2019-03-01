@@ -3,6 +3,7 @@ package com.synnex.superonlinestore.dao.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Data

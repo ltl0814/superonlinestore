@@ -82,7 +82,7 @@ public class GoodsController {
     @ApiOperation(value = "后台查询单个商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods/{gid}")
     public JsonEntity getGoods(@PathVariable("gid") int gid){
-        log.info(""+gid);
+        log.info("查询商品："+gid);
         return new JsonEntity("查询单个商品成功",true, goodsService.findone(gid));
     }
 

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -76,6 +75,7 @@ public class UserController {
     @ApiOperation(value = "用户注册",produces = "application/json")
     @PostMapping("/user")
     public JsonEntity userRegist(@Valid User user, BindingResult result) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        log.info("进入用户注册");
         JsonEntity je;
         if (result.hasErrors()){
             List<String> errlist = new ArrayList<>();
@@ -117,6 +117,7 @@ public class UserController {
     @ApiOperation(value = "修改密码",produces = "application/json")
     @PostMapping("/user/{loginId}/pwd")
     public JsonEntity updatePwd(@PathVariable String loginId,@RequestParam String oldPwd,@RequestParam String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        log.info("修改密码");
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
             String status = user.getStatus();
@@ -141,6 +142,7 @@ public class UserController {
     @GetMapping("/user/out")
     public JsonEntity loginOut(@RequestParam String loginId,HttpSession session){
         JsonEntity je;
+        log.info("用户退出");
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
             userServiceImp.deleteSession(loginId,session);
@@ -211,6 +213,3 @@ public class UserController {
         return list;
     }
 }
-
-
-

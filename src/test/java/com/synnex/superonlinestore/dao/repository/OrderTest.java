@@ -30,9 +30,11 @@ public class OrderTest {
     GoodsRepository goodsRepository;
     @Autowired
     RedisTemplate redisTemplate;
+    @Autowired
+    GoRepository goRepository;
     @Test
     public void testOrder(){
-        List<Db_Cart> list = cartRepository.findAllByUid(5715);
+        goRepository.deleteByOid(141);
 
     }
 }

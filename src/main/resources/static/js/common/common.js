@@ -3,6 +3,7 @@
  */
 $(function () {
     var currentUid = getQueryString("uid");
+    console.log(currentUid);
     var url = "/public/api/user/session";
     $.getJSON(url,function (result) {
         if(result.status){

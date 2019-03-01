@@ -32,9 +32,12 @@ $(function () {
             alert("请先登录后再操作哦！");
             window.location.href = "../slogin.html";
         }else{
+            var count = $("#quantity").val();
+            console.log(count);
             $.ajax({
                 url:"/public/api/user/"+uid+"/cart/"+gid,
                 type: "POST",
+                data:{"qty":count},
                 success:function (result) {
                     if(result.status){
                         alert("添加成功！");
