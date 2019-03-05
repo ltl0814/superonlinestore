@@ -125,7 +125,6 @@
             if(r!=null)return  unescape(r[2]); return null;
         }
         function reTotal(obj) {
-			console.log($(obj).parent().next().children("span").attr("desc"));
 			var p = $(obj).parent().prev().attr("desc");
 			var q = $(obj).val();
 			var sum = p * q;
@@ -135,15 +134,22 @@
             var gid = $(obj).attr("gid");
             var count = $(obj).val();
             var url = "/public/api/user/"+uid+"/cart/"+gid;
-			$.post(url,{
-			    uid:uid,
-				gid:gid,
-                _method:"PUT",
-                newCount:count
-			},function (result) {
-                $("#credits").html(result.data.sum);
-                $("#sum").html(result.data.sum);
+            if(/^[1-9]\d*$/.test(count)){
+                $.post(url,{
+                    uid:uid,
+                    gid:gid,
+                    _method:"PUT",
+                    newCount:count
+                },function (result) {
+                    $("#credits").html(result.data.sum);
+                    $("#sum").html(result.data.sum);
                 });
+                $("#buy").removeAttribute("disabled");
+            }else {
+                alert("输入数量格式不对！请重新输入");
+                $("#buy").attr("disabled",true);
+                return false;
+            }
         }
 	</script>
 	<script type="application/javascript" src="js/common/common.js"></script>

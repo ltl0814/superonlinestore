@@ -2,13 +2,9 @@
 $(function () {
 
      var uid = getQueryString("uid");
-
     //checkingUser(currentUid);
     initIndexNewly();
     initHotGoods();
-
-
-
 
     /**
      * 模糊查找功能-->页面跳转

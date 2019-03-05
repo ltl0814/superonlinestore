@@ -158,7 +158,6 @@ $(function(){
 
     //记住用户名密码
     function save() {
-
         if ($("#rememberMe").prop("checked")) {
             var str_username = $("#username").val();//用户名
             var str_password = $("#inputPassword3").val();//密码
@@ -172,5 +171,4 @@ $(function(){
             $.cookie("password", "", { expires: -1 });
         }
     };
-
 })

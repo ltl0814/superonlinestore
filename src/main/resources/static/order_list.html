@@ -95,6 +95,25 @@
 		Copyright &copy; 2018-2088  Dustin   版权所有
 	</div>
 	</body>
+	<script type="text/javascript">
+		function cancel() {
+            var oid = $("#cancel").val();
+            console.log(oid)
+            if (confirm("您真的要取消订单吗？")) {
+                $.ajax({
+                    type: 'post',
+                    url: '/public/api/user/' + oid + '/order',
+                    data: {"_method": "delete"},
+                    success: function (res) {
+                        if (res.status) {
+                            alert("取消订单成功！");
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        }
+	</script>
 	<script type="application/javascript" src="js/common/common.js"></script>
 	<script type="application/javascript" src="js/front/order_list.js"></script>
 </html>

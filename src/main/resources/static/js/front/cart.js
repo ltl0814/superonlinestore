@@ -2,7 +2,6 @@
 $(function(){
 
     var uid = getQueryString('uid');
-
     /**
      * 结算购物车物品
      */
@@ -33,7 +32,7 @@ $(function(){
                 '<td width="60" width="40%">'+
                 '<img src="../../products/hao/'+item.pic+'" width="70" height="60">'+
                 '</td><td width="30%">'+
-                '<a target="_blank">'+item.title+'</a></td>'+
+                '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">'+item.title+'</a></td>'+
             '<td width="20%"  desc='+item.price+'> ￥'+item.price+'</td>'+
             '<td width="10%">'+
                 '<input type="text" onchange="reTotal(this)"  gid="'+item.gid+'" name="quantity" value="'+item.count+'" maxlength="4" size="10"></td>'+
