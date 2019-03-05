@@ -144,7 +144,7 @@
                     $("#credits").html(result.data.sum);
                     $("#sum").html(result.data.sum);
                 });
-                $("#buy").removeAttribute("disabled");
+                $("#buy").attr("disabled",false);
             }else {
                 alert("输入数量格式不对！请重新输入");
                 $("#buy").attr("disabled",true);

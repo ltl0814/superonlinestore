@@ -1,12 +1,24 @@
 $(function () {
+
+
     var oid = getQueryString("oid");
     var uid = getQueryString("uid");
+
     $.ajax({
         type:"GET",
         url:"/pulic/api/user/order/"+oid,
         success:function (res) {
             if(res.status){
                 var goods = res.data;
+                console.log(goods);
+                if (goods[0].status=='待支付'){
+                    $("#bank").css("display","block");
+                }else {
+                    $("#location").val("四川省资阳市雁江区东福小区").attr("disabled",true);
+                    $("#receiver").val("李天乐").attr("disabled",true);
+                    $("#tel").val("152XXXXX924").attr("disabled",true);
+                    $("#container").append('<img style="padding-left: 100px" src="../../images/MTQ2OTY5MTUyNjcwMy04OTI3MDg1NDk=.jpg">')
+                }
                 $.each(goods,function (index,item) {
                     $("#goods").append('<tbody><tr class="warning">'+
                     '<th colspan="5">订单编号:<b style="color: red"> '+item.oid+
