@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperOnlineStore</title>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/common/common.js" type="text/javascript"></script>
+</head>
+<body style="background: url(img/sign_bg.db29b0fb.png) no-repeat;background-size: 100%">
+<form method="post" >
+    <table cellspacing="0" cellpadding="0" style="margin-top: 100px" align="center">
+        <tr>
+            <td style="background:#46b8da">
+                <table>
+                    <tr>
+                        <div style="text-align: center"><h2 style="color: pink">修改密码</h2></div>
+                    </tr>
+                    <tr>
+                        <td>用户ID：</td>
+                        <td><input type="text" id="loginId" name="loginId" disabled="disabled" /></td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>原密码：</td>
+                        <td><input type="password" name="oldPwd" id="password" /></td>
+                    </tr>
+                    <tr>
+                        <td id="password_feedback" style="color: red"></td>
+                    </tr>
+                    <tr>
+                        <td>新密码：</td>
+                        <td><input type="password" name="newPwd" id="newPassword" /></td>
+                    </tr>
+                    <tr>
+                        <td id="newPassword_feedback" style="color: red"></td>
+                    </tr>
+                    <tr>
+                        <td>确认新密码：</td>
+                        <td><input type="password" name="renewPwd" id="renewPassword" /></td>
+                    </tr>
+                    <tr>
+                        <td id="renewPassword_feedback" style="color: red"></td>
+                    </tr>
+                    <tr><td><input type="button" value="确认修改" id="button" /></td><td><input type="button" id="back" value="返回"></td><td>&nbsp;</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</form>
+<script language="JavaScript">
+    $(function () {
+        var loginId = getQueryString("loginId");
+        $("#loginId").val(loginId);
+        $("#password").blur(function () {
+            var password = $("#password").val();
+            if (password == ""||password==null||password==undefined) {
+                $("#password_feedback").text("原密码不能为空！");
+            }else {
+                $("#password_feedback").text("");
+            }
+        });
+        $("#newPassword").blur(function () {
+            var newPassword = $("#newPassword").val();
+            if (newPassword == ""||newPassword==null||newPassword==undefined) {
+                $("#newPassword_feedback").text("原密码不能为空！");
+            } else {
+                if (newPassword.length != 6) {
+                    $("#newPassword_feedback").text("新密码只能为六位数字！");
+                }else {
+                    $("#newPassword_feedback").text("");
+                }
+            }
+        });
+        $("#renewPassword").blur(function () {
+            var newPassword = $("#newPassword").val();
+            var renewPassword = $("#renewPassword").val();
+            if (newPassword != renewPassword) {
+                $("#renewPassword_feedback").text("和新密码不一致！请重新输入！");
+            }else {
+                $("#renewPassword_feedback").text("");
+            }
+        });
+        $("#button").click(function () {
+            $.ajax({
+                url:"/public/api/user/"+loginId+"/pwd",
+                type:"POST",
+                data:$("form").serialize(),
+                success:function (res) {
+                    if (res.status){
+                        alert(res.msg);
+                        window.location.href = "../slogin.html";
+                    }else {
+                        alert(res.msg);
+                    }
+
+                }
+            });
+        });
+        $("#back").click(function () {
+            history.go(-1);
+        })
+    })
+</script>
+</body>
+</html>
