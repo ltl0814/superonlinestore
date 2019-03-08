@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://39.108.113.197:3306/DB_practice?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
-    username: root
+    username: synnex
     password: SUNkai520
   jpa:
     hibernate:
@@ -13,5 +13,5 @@ server:
     context-path: /
 
     session:
-      timeout: 2h
+      timeout: 5h
 
