@@ -11,5 +11,8 @@
         <module name="superonlinestorev1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="superonlinestore" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
