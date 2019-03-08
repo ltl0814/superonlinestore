@@ -3,9 +3,6 @@
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href="../../css/Style1.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src="../..//js/public.js"></script>
-		<script language="javascript" src="../..//js/jquery-1.11.0.js"></script>
-		
 	</HEAD>
 	<body>
 		<form id="Form1" name="Form1" action="" method="post">
@@ -24,8 +21,7 @@
 							<table cellspacing="0" cellpadding="1" rules="all"
 								bordercolor="gray" border="1" id="DataGrid1"
 								style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; WIDTH: 100%; WORD-BREAK: break-all; BORDER-BOTTOM: gray 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #f5fafe; WORD-WRAP: break-word">
-								<tr
-									style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #afd1f3">
+								<tr style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #afd1f3">
 
 									<td align="center" width="18%">
 										序号
@@ -49,39 +45,6 @@
 										删除
 									</td>
 								</tr>
-										<tr onmouseover="this.style.backgroundColor = 'white'"
-											onmouseout="this.style.backgroundColor = '#F5FAFE';">
-											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="18%">
-												1
-											</td>
-											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="17%">
-												Lambertz
-											</td>
-											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="17%">
-												kobe
-											</td>
-											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="17%">
-												正常使用/不可用
-											</td>
-											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-												width="17%">
-												Lambertz@synnex.com
-											</td>
-											<td align="center" style="HEIGHT: 22px">
-												<a href="edit.html">
-													<img src="../../img/admin/i_edit.gif" border="0" style="CURSOR: hand">
-												</a>
-											</td>
-											<td align="center" style="HEIGHT: 22px">
-												<a  class="deleteUser" href="#" >
-													<img src="../..//img/admin/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
-												</a>
-											</td>
-										</tr>
 							</table>
 						</td>
 					</tr>
@@ -89,6 +52,8 @@
 			</table>
 		</form>
 	</body>
+	<script language="javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<script language="javascript" src="../../js/public.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$(".deleteUser").click(function(){

@@ -11,7 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +51,7 @@ public class UserController {
     @ApiOperation(value = "用户登录", produces = "application/json")
     @PostMapping("/user/auth")
     public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd,@RequestParam String verifyCode, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        JsonEntity je;
+        JsonEntity je = null;
         User user = userServiceImp.findByloginid(loginId);
         log.info("进入用户登录验证");
         if (null!=user){
@@ -69,6 +75,7 @@ public class UserController {
     @ApiOperation(value = "用户注册",produces = "application/json")
     @PostMapping("/user")
     public JsonEntity userRegist(@Valid User user, BindingResult result) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        log.info("进入用户注册");
         JsonEntity je;
         if (result.hasErrors()){
             List<String> errlist = new ArrayList<>();
@@ -108,15 +115,16 @@ public class UserController {
     }
 
     @ApiOperation(value = "修改密码",produces = "application/json")
-    @PutMapping("/user/{loginId}/pwd")
+    @PostMapping("/user/{loginId}/pwd")
     public JsonEntity updatePwd(@PathVariable String loginId,@RequestParam String oldPwd,@RequestParam String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        log.info("修改密码");
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
             String status = user.getStatus();
             if (status.equals(LockStatus)){
                 return new JsonEntity("账号处于冻结状态",false);
             }else {
-                return userServiceImp.updatePwdByloginid(loginId,oldPwd,newPwd);
+                return userServiceImp.updatePwdByloginid(loginId,user.getPwd(),oldPwd,newPwd);
             }
         }else {
             return new JsonEntity("账号不存在！",false);
@@ -134,6 +142,7 @@ public class UserController {
     @GetMapping("/user/out")
     public JsonEntity loginOut(@RequestParam String loginId,HttpSession session){
         JsonEntity je;
+        log.info("用户退出");
         User user = userServiceImp.findByloginid(loginId);
         if (null!=user){
             userServiceImp.deleteSession(loginId,session);
@@ -165,7 +174,6 @@ public class UserController {
         Object[] objs = VerifyUtil.createImage();
         //将验证码存入Session方便以后的验证
         session.setAttribute("imageCode",objs[0]);
-
         //将图片输出给浏览器
         BufferedImage image = (BufferedImage) objs[1];
         response.setContentType("image/png");
@@ -179,7 +187,8 @@ public class UserController {
         JsonEntity je;
         String imageCode = (String) session.getAttribute("imageCode");
         log.info(verifyCode);
-        if (imageCode.equalsIgnoreCase(verifyCode)){
+        log.info(imageCode);
+        if (verifyCode.equalsIgnoreCase(imageCode)){
             je = new JsonEntity("验证码正确！",true);
             return je;
         }else {
@@ -187,7 +196,20 @@ public class UserController {
             return je;
         }
     }
+
+    @ApiOperation("测试全局异常")
+    @GetMapping("/exception/test")
+    public void testException(){
+        System.out.println(100/0);
+    }
+
+    @ApiOperation("获取所有用户")
+    @GetMapping("/user/all")
+    public List<User> getAllUsers(){
+        List<User> list;
+
+        list = userServiceImp.getAllUsers();
+
+        return list;
+    }
 }
-
-
-

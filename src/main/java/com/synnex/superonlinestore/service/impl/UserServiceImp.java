@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -79,10 +80,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public JsonEntity updatePwdByloginid(String loginid, String oldpwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        Boolean flag = Md5SaltTool.validPassword(newpwd,oldpwd);
+    public JsonEntity updatePwdByloginid(String loginId, String pwdInDb, String oldPwd, String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Boolean flag = Md5SaltTool.validPassword(oldPwd,pwdInDb);
         if (flag){
-             userRepository.updatePwdByloginid(loginid,newpwd);
+            newPwd=Md5SaltTool.getEncryptedPwd(newPwd);
+             userRepository.updatePwdByloginid(loginId,newPwd);
              return new JsonEntity("修改成功",true);
         }else {
              return new JsonEntity("修改失败！输入原密码不正确！",false);
@@ -109,4 +111,8 @@ public class UserServiceImp implements UserService {
         session.removeAttribute(loginId);
     }
 
+    @Override
+    public List<User> getAllUsers(){
+      return  userRepository.findAll();
+    }
 }

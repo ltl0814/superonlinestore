@@ -13,6 +13,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import com.synnex.superonlinestore.dao.entity.Goods;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -23,13 +24,13 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/16/18 17:15
  * @Description:
  */
 @RestController
 @Slf4j
-@Api(value = "商品管理", description = "curd")
+@Api(value = "商品管理", description = "商品的crud")
 public class GoodsController {
 
     @Autowired
@@ -81,7 +82,7 @@ public class GoodsController {
     @ApiOperation(value = "后台查询单个商品", produces = "application/json")
     @GetMapping("/public/api/backend/goods/{gid}")
     public JsonEntity getGoods(@PathVariable("gid") int gid){
-        log.info(""+gid);
+        log.info("查询商品："+gid);
         return new JsonEntity("查询单个商品成功",true, goodsService.findone(gid));
     }
 
@@ -129,5 +130,11 @@ public class GoodsController {
         JsonEntity jsonEntity=new JsonEntity("删除商品"+gid+"成功",true, null);
         return jsonEntity;
     }
-
+    @ApiOperation("后台管理界面映射")
+    @GetMapping("/backend")
+    public ModelAndView backend(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/Administer/index");
+        return mv;
+    }
 }

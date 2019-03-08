@@ -1,7 +1,7 @@
 //购物车模块api调用
 $(function(){
-    var uid = getQueryString('uid');
 
+    var uid = getQueryString('uid');
     /**
      * 结算购物车物品
      */
@@ -11,13 +11,14 @@ $(function(){
             type:"GET",
             success: function(result){
                 if(result.status){
-                    alert("结算成功！");
+                    alert("下单成功！");
                     window.location.href = "../order_list.html?uid="+uid;
                 }
             }
         })
         return false;
     });
+
     /**
      * 查询购物车
      */
@@ -31,12 +32,12 @@ $(function(){
                 '<td width="60" width="40%">'+
                 '<img src="../../products/hao/'+item.pic+'" width="70" height="60">'+
                 '</td><td width="30%">'+
-                '<a target="_blank">'+item.title+'</a></td>'+
-            '<td width="20%"> ￥'+item.price+'</td>'+
+                '<a href="product_info.html?gid='+item.gid+'&uid='+uid+'">'+item.title+'</a></td>'+
+            '<td width="20%"  desc='+item.price+'> ￥'+item.price+'</td>'+
             '<td width="10%">'+
-                '<input type="text" name="quantity" value="'+item.count+'" maxlength="4" size="10"></td>'+
+                '<input type="text" onchange="reTotal(this)"  gid="'+item.gid+'" name="quantity" value="'+item.count+'" maxlength="4" size="10"></td>'+
                 '<td width="15%">'+
-                '<span class="subtotal">￥'+item.suatotal+'</span>'+
+                '<span  desc='+item.suatotal+'>'+item.suatotal+'</span>'+
             '</td><td>'+
             '<a href="javascript:;" class="delete" id="del_'+item.gid+'">删除</a></td></tr>');
             $("#del_"+item.gid).click(function () {
@@ -45,7 +46,7 @@ $(function(){
                     type:"DELETE",
                     success:function(result){
                         if(result.status){
-                            alert("OK，安排上了！");
+                            alert("删除成功！");
                             window.location.href = "../cart.html?uid="+uid;
                         }else{
                             alert("sorry,操作失败！");
@@ -57,12 +58,27 @@ $(function(){
 
 
         $("#credits").html(result.data.sum);
-        $("#sum").html("￥"+result.data.sum+"元");
+        $("#sum").html(result.data.sum);
         }else{
             var url = "../index.html?uid="+uid;
             $("#cart_content").html("<h3 style='display: inline-block'>购物车暂时没有任何商品哦亲！</h3><a href="+url+">点击前往购物</a>");
             $("#cart_content_bottom").html("");
         }
     }
+    })
+    
+    $("#clear").click(function () {
+        $.ajax({
+            url:"/public/api/user/"+uid+"/cart",
+            type:"POST",
+            data:{_method:"delete"},
+            success:function (res) {
+                if (res.status){
+                    alert("清空购物车成功！");
+                    window.location.reload();
+                }
+            }
+        });
+        return false;
     })
 })

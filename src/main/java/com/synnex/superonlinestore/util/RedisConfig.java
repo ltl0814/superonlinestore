@@ -22,7 +22,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date:
  * @Description:
  */
@@ -47,9 +47,11 @@ public class RedisConfig extends CachingConfigurerSupport {
     public RedisTemplate redisTemplate(RedisConnectionFactory factory) {
         StringRedisTemplate template = new StringRedisTemplate(factory);
 
-        RedisSerializer keySerializer = new StringRedisSerializer(); // 设置key序列化类，否则key前面会多了一些乱码
+        // 设置key序列化类，否则key前面会多了一些乱码
+        RedisSerializer keySerializer = new StringRedisSerializer();
         template.setKeySerializer(keySerializer);
-        setValueSerializer(template);//设置value序列化
+        //设置value序列化
+        setValueSerializer(template);
         template.afterPropertiesSet();
         template.setEnableTransactionSupport(true);
         return template;

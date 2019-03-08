@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 /**
  * @Author: Dustin Li
@@ -28,11 +29,13 @@ public interface UserService {
     int updateStatusByloginid(String loginid, String status);
 
     //修改密码
-    JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
+    JsonEntity updatePwdByloginid(String loginid, String oldwd, String newpwd, String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     //修改用户信息
     JsonEntity updateUserByloginid(User user,HttpSession session);
 
     void deleteSession(String loginId,HttpSession session);
+
+    List<User> getAllUsers();
 }
 

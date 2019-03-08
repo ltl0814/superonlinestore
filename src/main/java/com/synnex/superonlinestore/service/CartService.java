@@ -7,11 +7,17 @@ import org.springframework.stereotype.Service;
 
 
 public interface CartService {
-    public void addToCart(int uid, int gid);
-    public void editCount (int uid,int gid ,int newCount);
+
+    void addToCart(int uid, int gid, int count);
+
+    public void editCount (int uid, int gid , int newCount);
+
     public void deletaOneFromCart(int uid,int gid);
+
     public void deleteAllFromCart(int uid);
+
     public boolean payCart(int uid);
+
     public DetailResult queryCart(int uid);
 
 }

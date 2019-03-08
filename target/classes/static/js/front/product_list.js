@@ -4,7 +4,7 @@ $(function(){
     var name = getQueryString("name");
     var page = getQueryString("page");
     if(name == null||name.length == 0){
-        queryAll(page-1,2);
+        queryAll(page-1,5);
     } else{
         queryByName(name);
     }
@@ -97,4 +97,19 @@ $(function(){
         })
     }
 
+    /**
+     * 模糊查找功能-->页面跳转
+     */
+    $("#search_btn").click(function () {
+        var content = $("#search_content").val().trim();
+        if(content == null || content == ""){
+            // window.location.href = "../product_list.html?page=1&uid="+uid;
+            $("#search_content").attr("placeholder","请勿输入空值！");
+        }else{
+            window.location.href = "../product_list.html?uid="+uid+"&name="+content;
+            $("#search_content").attr("placeholder","请输入需要查询的内容")
+            $("#search_content").val("");
+        }
+        return false;
+    });
 })
