@@ -7,7 +7,7 @@ spring:
   jpa:
     hibernate:q
       ddl-auto: none
-      show-sql: fasle
+      show-sql: true
   thymeleaf:
     prefix: classpath:/static/
 
