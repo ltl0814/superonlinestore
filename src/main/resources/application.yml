@@ -16,4 +16,4 @@ server:
     context-path: /
 
     session:
-      timeout: 200h
+      timeout: 2h
