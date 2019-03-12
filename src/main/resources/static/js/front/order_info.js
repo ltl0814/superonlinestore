@@ -4,6 +4,10 @@ $(function () {
     var oid = getQueryString("oid");
     var uid = getQueryString("uid");
 
+    function payOrder(){
+        alert("支付成功！");
+    }
+
     $.ajax({
         type:"GET",
         url:"/pulic/api/user/order/"+oid,
@@ -54,4 +58,5 @@ $(function () {
             }
         }
     });
+
 })
