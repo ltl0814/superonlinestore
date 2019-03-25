@@ -6,6 +6,7 @@ $(function () {
    if(gid == null || gid == ""){
        insertProduct();
    }else{
+       $("#file").attr("disabled",true);
        toModifyProductPage(gid);
    }
 
@@ -39,10 +40,10 @@ $(function () {
                cache:false,
                success:function(result){
                    if(result.status){
-                       alert("成了，插入成功。");
+                       alert("添加成功");
                        window.location.href = "../../Administer/product/list.html?page=1";
                    }else{
-                       alert("没添加成功");
+                       alert("添加失败，请重试");
                    }
                }
            });
