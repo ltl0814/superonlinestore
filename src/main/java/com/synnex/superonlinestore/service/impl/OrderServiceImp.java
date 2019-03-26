@@ -46,7 +46,7 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
-    @Cacheable(value = "orders",key = "all")
+    @Cacheable(value = "orders",key = "'allOrders'")
     public List<DetailResult> allOrder() {
         List<Order> orders = orderRepository.findAll();
         List<DetailResult> results = new ArrayList<>();
@@ -56,9 +56,9 @@ public class OrderServiceImp implements OrderService {
 
     @Override
     @CacheEvict(value = "orders",allEntries = true)
-    public void editOrder(int oid, int uid) {
-        Order order = orderRepository.findByOidAndUid(oid,uid);
-        order.setStatus("已发货");
+    public void editOrder(int oid, String status) {
+        Order order = orderRepository.findByOid(oid);
+        order.setStatus(status);
         orderRepository.save(order);
     }
 

@@ -127,7 +127,7 @@ public class UserServiceImp implements UserService {
 
     //得到所有用户信息
     @Override
-    @Cacheable(value = "users",key = "all")
+    @Cacheable(value = "users",key = "'allUsers'")
     public List<User> getAllUsers(){
       return  userRepository.findAll();
     }

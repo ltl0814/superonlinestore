@@ -207,9 +207,7 @@ public class UserController {
     @GetMapping("/user/all")
     public List<User> getAllUsers(){
         List<User> list;
-
         list = userServiceImp.getAllUsers();
-
         return list;
     }
 }

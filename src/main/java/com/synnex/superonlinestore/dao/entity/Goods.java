@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/15/18 17:34
  * @Description: 商品实体类
  */

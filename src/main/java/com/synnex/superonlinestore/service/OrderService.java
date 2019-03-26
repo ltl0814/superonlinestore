@@ -11,7 +11,7 @@ public interface OrderService {
 
     List<DetailResult> allOrder();
 
-    void editOrder(int uid,int oid);
+    void editOrder(int oid,String status);
 
     List<DetailResult> findOrder(int oid);
 

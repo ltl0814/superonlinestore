@@ -41,10 +41,10 @@ public class OrderController {
     }
 
     @ApiOperation(value = "修改订单状态")
-    @RequestMapping(value = "/public/api/backend/order/{uid}/{oid}", method = {RequestMethod.PUT})
-    public JsonEntity editOrder(@PathVariable("oid")int oid,@PathVariable("uid")int uid){
+    @RequestMapping(value = "/public/api/backend/order/{oid}", method = {RequestMethod.PUT})
+    public JsonEntity editOrder(@PathVariable("oid")int oid,String status){
         log.info("修改订单状态");
-        orderService.editOrder(oid, uid);
+        orderService.editOrder(oid, status);
         return new JsonEntity("修改成功",true);
     }
 
