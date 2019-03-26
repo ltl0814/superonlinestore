@@ -6,6 +6,8 @@ import com.synnex.superonlinestore.service.UserService;
 import com.synnex.superonlinestore.util.JsonEntity;
 import com.synnex.superonlinestore.util.Md5SaltTool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -30,12 +32,15 @@ public class UserServiceImp implements UserService {
     @Autowired
     RedisTemplate redisTemplate;
 
+    //添加用户
     @Override
+    @CacheEvict(value = "users",allEntries = true)
     public User save(User user) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         user.setPwd(Md5SaltTool.getEncryptedPwd(user.getPwd()));
         return userRepository.save(user);
     }
 
+    //验证用户登录
     @Override
     public Boolean validateLogin(String loginid, String pwd, User user) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         Boolean flag;
@@ -69,17 +74,23 @@ public class UserServiceImp implements UserService {
         }
     }
 
+    //通过loginID查询用户
     @Override
+    @CacheEvict(value = "users",allEntries = true)
     public User findByloginid(String loginid) {
         return userRepository.findByloginid(loginid);
     }
 
+    //更改用户状态
     @Override
+    @CacheEvict(value = "users",allEntries = true)
     public int updateStatusByloginid(String loginid, String status) {
         return userRepository.updateStatusByloginid(loginid,status);
     }
 
+    //修改用户密码
     @Override
+    @CacheEvict(value = "users",allEntries = true)
     public JsonEntity updatePwdByloginid(String loginId, String pwdInDb, String oldPwd, String newPwd) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         Boolean flag = Md5SaltTool.validPassword(oldPwd,pwdInDb);
         if (flag){
@@ -91,7 +102,9 @@ public class UserServiceImp implements UserService {
         }
     }
 
+    //修改用户信息
     @Override
+    @CacheEvict(value = "users",allEntries = true)
     public JsonEntity updateUserByloginid(User user,HttpSession session) {
         int i = userRepository.updateUserByloginid(user.getLoginid(),
                                             user.getUsername(),
@@ -106,12 +119,15 @@ public class UserServiceImp implements UserService {
         }
     }
 
+    //去除用户的session
     @Override
     public void deleteSession(String loginId, HttpSession session) {
         session.removeAttribute(loginId);
     }
 
+    //得到所有用户信息
     @Override
+    @Cacheable(value = "users",key = "all")
     public List<User> getAllUsers(){
       return  userRepository.findAll();
     }

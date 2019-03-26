@@ -27,6 +27,8 @@ public class CartServiceImp implements CartService {
     OrderRepository orderRepository;
     @Autowired
     GoRepository goRepository;
+
+
     @Override
     public void addToCart(int uid, int gid, int count) {
         Db_Cart cart = cartRepository.findByUidAndGid(uid,gid);
@@ -56,8 +58,6 @@ public class CartServiceImp implements CartService {
             Db_Cart cart1 = cartRepository.save(cart);
         }
     }
-
-
 
     @Override
     public void deletaOneFromCart(int uid ,int gid) {

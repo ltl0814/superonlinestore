@@ -13,6 +13,7 @@ import com.synnex.superonlinestore.dao.repository.OrderRepository;
 import com.synnex.superonlinestore.dao.repository.UserRepository;
 import com.synnex.superonlinestore.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,7 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    @Cacheable(value = "orders",key = "all")
     public List<DetailResult> allOrder() {
         List<Order> orders = orderRepository.findAll();
         List<DetailResult> results = new ArrayList<>();
@@ -53,6 +55,7 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    @CacheEvict(value = "orders",allEntries = true)
     public void editOrder(int oid, int uid) {
         Order order = orderRepository.findByOidAndUid(oid,uid);
         order.setStatus("已发货");
@@ -70,6 +73,7 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    @CacheEvict(value = "orders",allEntries = true)
     public void deleteOrder(int oid) {
         goRepository.deleteByOid(oid);
         orderRepository.deleteById(oid);
