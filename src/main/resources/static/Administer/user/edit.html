@@ -3,15 +3,17 @@
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<LINK href="../../css/Style1.css" type="text/css" rel="stylesheet">
-		<script language="javascript" src="../../js/jquery-1.11.0.js"></script>
+		<script language="javascript" src="../../js/jquery-1.11.3.min.js"></script>
+		<script language="javascript" src="../../js/common/common.js"></script>
+		<script language="javascript" src="../../js/backend/edit.js"></script>
 	</HEAD>
 	
 	<body>
 		<form id="userAction_save_do" name="Form1" action="#" method="post" >
-			<input type="hidden" name="uid" value="" />
-			<input type="hidden" id="sex" value="" />
-			
-			&nbsp;
+			<input type="hidden" id="method" name="_method" value="put" />
+			<input type="hidden" id="uid" name="uid" value="" />
+			<input type="hidden" id="pwd" name="pwd" value="" />
+
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 				<tr>
 					<td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
@@ -23,32 +25,32 @@
 			
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						账号：
+						用户名：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" disabled name="password" value="lambertz" class="bg"/>
+						<input type="text" id="username" name="username"  class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						邮箱：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="email" value="Lambertz@synnex.com" class="bg"/>
+						<input type="email" id="email" name="email" class="bg"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						姓名：
+						用户ID：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="name" value="kobe"  class="bg"/>
+						<input type="text" id="loginid" name="loginid"  class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						状态：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<select>
-							<option selected>激活</option>
-							<option>禁用</option>
+						<select id="status">
+							<option value="2">立即冻结</option>
+							<option value="1">当前可用</option>
 						</select>
 					</td>
 				</tr>
@@ -56,7 +58,7 @@
 				<tr>
 					<td class="ta_01" style="WIDTH: 100%" align="center"
 						bgColor="#f5fafe" colSpan="4">
-						<button type="submit" id="userAction_save_do_submit" value="确定" class="button_ok">
+						<button type="button" id="userAction_save_do_submit" value="确定" class="button_ok">
 							&#30830;&#23450;
 						</button>
 
@@ -69,16 +71,7 @@
 					</td>
 				</tr>
 			</table>
-		</form>
+
 	</body>
-	<script type="text/javascript">
-		// $(function(){
-		// 	var sex = $("#sex").val();
-		// 	$("input[name='sex']").each(function(){
-		// 		if($(this).val() == sex){
-		// 			$(this).attr("checked","checked");
-		// 		}
-		// 	});
-		// })
-	</script>
+
 </HTML>

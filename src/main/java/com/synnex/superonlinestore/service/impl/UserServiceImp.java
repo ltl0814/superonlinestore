@@ -131,4 +131,15 @@ public class UserServiceImp implements UserService {
     public List<User> getAllUsers(){
       return  userRepository.findAll();
     }
+
+    @Override
+    @CacheEvict(value = "users",allEntries = true)
+    public JsonEntity deleteUser(String loginid) {
+        int i = userRepository.deleteByLoginid(loginid);
+        if (i==1){
+            return new JsonEntity("删除成功",true);
+        }else {
+            return new JsonEntity("删除失败",false);
+        }
+    }
 }

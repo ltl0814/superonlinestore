@@ -53,7 +53,7 @@ $(function () {
                     var data = res.data[0].list;
                     console.log(data);
                     $.each(data,function (index,item) {
-                        tr.append("<td align='center'><img width='60' height='65' src='../../products/hao/"+item.pic+"'></td>" +
+                        tr.append("<td align='center'><img width='60' height='65' src="+item.pic+"'../../products/hao'></td>" +
                             "<td align='center'><b>商品名称 :</b>"+item.title+"</td>" +
                             "<td align='center'><b>购买数量 :</b>"+item.count+"</td>" +
                             "<td align='center'><b>商品价格 :</b>"+item.price+"<br/></td>" +
