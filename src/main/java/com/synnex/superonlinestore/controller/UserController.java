@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,7 +51,7 @@ public class UserController {
 
     @ApiOperation(value = "用户登录", produces = "application/json")
     @PostMapping("/user/auth")
-    public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd,@RequestParam String verifyCode, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public JsonEntity userLogin(@RequestParam String loginId, @RequestParam String pwd, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         JsonEntity je = null;
         User user = userServiceImp.findByloginid(loginId);
         log.info("进入用户登录验证");
@@ -197,19 +198,24 @@ public class UserController {
         }
     }
 
-    @ApiOperation("测试全局异常")
-    @GetMapping("/exception/test")
-    public void testException(){
-        System.out.println(100/0);
-    }
-
     @ApiOperation("获取所有用户")
     @GetMapping("/user/all")
     public List<User> getAllUsers(){
         List<User> list;
-
         list = userServiceImp.getAllUsers();
-
         return list;
+    }
+
+    @ApiOperation("删除指定用户")
+    @DeleteMapping("user/{loginId}/backend")
+    public JsonEntity deleteUser(@PathVariable String loginId){
+        return userServiceImp.deleteUser(loginId);
+    }
+
+    @ApiOperation("查询指定用户")
+    @GetMapping("user/find/{loginId}")
+    public JsonEntity findUser(@PathVariable String loginId){
+        User user = userServiceImp.findByloginid(loginId);
+        return new JsonEntity("查询成功",true,user);
     }
 }

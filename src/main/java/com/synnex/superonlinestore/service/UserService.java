@@ -37,5 +37,7 @@ public interface UserService {
     void deleteSession(String loginId,HttpSession session);
 
     List<User> getAllUsers();
+
+    JsonEntity deleteUser(String loginid);
 }
 

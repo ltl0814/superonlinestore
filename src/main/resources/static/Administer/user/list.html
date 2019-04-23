@@ -33,7 +33,7 @@
 										姓名
 									</td>
 									<td align="center" width="17%">
-										状态
+										状态<font color="red">(1:可用 2：已冻结)</font>
 									</td>
 									<td align="center" width="17%">
 										邮箱
@@ -53,17 +53,6 @@
 		</form>
 	</body>
 	<script language="javascript" src="../../js/jquery-1.11.3.min.js"></script>
-	<script language="javascript" src="../../js/public.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$(".deleteUser").click(function(){
-				var userName = $(this).parent().parent().find("td:eq(2)").text().trim();
-				if(!confirm("您即将删除"+userName+"的数据")){
-					return false;
-				}
-				
-			});
-		})
-	</script>
+	<script language="javascript" src="../../js/backend/public.js"></script>
 </HTML>
 

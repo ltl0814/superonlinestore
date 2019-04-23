@@ -37,4 +37,6 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     @Query(value = "update db_user set username=?2,status=?3,email=?4 where loginid=?1",nativeQuery = true)
     int updateUserByloginid(String loginid, String username,String status,String email);
 
+    @Transactional
+    int deleteByLoginid(String loginid);
 }

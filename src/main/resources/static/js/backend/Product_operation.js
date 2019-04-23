@@ -6,6 +6,7 @@ $(function () {
    if(gid == null || gid == ""){
        insertProduct();
    }else{
+       $("#file").attr("disabled",true);
        toModifyProductPage(gid);
    }
 
@@ -39,10 +40,10 @@ $(function () {
                cache:false,
                success:function(result){
                    if(result.status){
-                       alert("成了，插入成功。");
+                       alert("添加成功");
                        window.location.href = "../../Administer/product/list.html?page=1";
                    }else{
-                       alert("没添加成功");
+                       alert("添加失败，请重试");
                    }
                }
            });
@@ -61,19 +62,21 @@ $(function () {
                     $("#title").val(result.data.title);
                     $("#stock").val(result.data.stock);
                     $("#price").val(result.data.price);
-                    $("#status option").not(function(){
-                        return !this.selected;
-                    }).val(result.data.title);
                     $("#detail").val(result.data.detail);
+                    $("#gid").val(result.data.gid);
+                    $("#ct").val(result.data.createTime);
                 }
             }
-        })
+        });
+
         //商品添加与更新操作的提交事件
         $("#submit").click(function () {
             var price = $("#price").val();
             var title = $("#title").val();
             var detail = $("#detail").val();
             var stock =  $("#stock").val();
+            var gid =  $("#gid").val();
+            var ct =  $("#ct").val();
             var status = $("#status option").not(function(){
                 return !this.selected;
             }).val();
@@ -84,6 +87,8 @@ $(function () {
             formData.append("detail",detail);
             formData.append("stock",stock);
             formData.append("status",status);
+            formData.append("gid",gid);
+            formData.append("createTime",ct);
            // formData.append("file",file);
 
             $.ajax({
@@ -95,10 +100,10 @@ $(function () {
                 cache:false,
                 success:function(result){
                     if(result.status){
-                        alert("成了，更新成功。");
+                        alert("编辑成功");
                         window.location.href = "../../Administer/product/list.html?page=1";
                     }else{
-                        alert("更新失败！");
+                        alert("编辑失败，请重新输入正确信息！");
                     }
                 }
             });

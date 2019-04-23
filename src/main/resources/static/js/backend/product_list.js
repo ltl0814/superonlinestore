@@ -33,8 +33,7 @@ $(function () {
                     var productList = result.data.content;
                     var products = "";
                     $.each(productList,function(index,item){
-                        products += '<tr onmouseover="this.style.backgroundColor = white"' +
-                            'onmouseout="this.style.backgroundColor = #F5FAFE;">' +
+                        products += '<tr">' +
                             '<td style="CURSOR: hand; HEIGHT: 22px" align="center"' +
                             'width="10%">'+(index+1) +
                             '</td>' +
@@ -79,8 +78,8 @@ $(function () {
                         $("#pagination").html("");
                         $("#pagination").html('<li>当前 '+currentPage+' 页' +
                             '<a href="javascript:;" id="upper"><span aria-hidden="true">上一页</span></a>' +
-                            '<input value="'+currentPage+'" class="to_page" style="width: 30px;display: inline-block;" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,"");}).call(this)" onblur="this.v();" >' +
-                            '<input type="button" value="Go" />' +
+                            '<input value="'+currentPage+'" id="page" class="to_page" style="width: 30px;display: inline-block;" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,"");}).call(this)" onblur="this.v();" >' +
+                            '<input type="button" id="go" value="Go" />' +
                             '<a href="javascript:;" id="next"><span aria-hidden="true">下一页</span></a>' +
                             '共 '+totalPage+' 页' +
                             '</li>');
@@ -102,6 +101,16 @@ $(function () {
                             return false;
                         }else{
                             window.location.href = "../../Administer/product/list.html?page="+(currentPage+1);
+                        }
+                    });
+
+                    $("#go").click(function(){
+                        var page = $("#page").val();
+                        if (page<1||page>totalPage){
+                            alert("输入的页码格式错误！");
+                            return false;
+                        } else {
+                            window.location.href = "../../Administer/product/list.html?page="+page;
                         }
                     });
                 }

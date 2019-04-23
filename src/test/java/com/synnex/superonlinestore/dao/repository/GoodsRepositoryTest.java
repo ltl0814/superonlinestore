@@ -1,6 +1,7 @@
 package com.synnex.superonlinestore.dao.repository;
 
 import com.synnex.superonlinestore.dao.entity.Goods;
+import com.synnex.superonlinestore.dao.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * @Auther: kobef
+ * @Auther: dustinl
  * @Date: 11/15/18 18:13
  * @Description:
  */
@@ -24,6 +25,8 @@ import static org.junit.Assert.*;
 public class GoodsRepositoryTest {
     @Autowired
     GoodsRepository goodsRepository;
+    @Autowired
+    UserRepository userRepository;
     @Test
     public void addGoods(){
       Goods goods=  new Goods();
@@ -48,7 +51,8 @@ public class GoodsRepositoryTest {
     }
     @Test
     public void test22(){
-        System.out.println(goodsRepository.findByGid(1));
+        User user = userRepository.findByUid(5721);
+        System.out.println(user);
     }
 
     @Test
