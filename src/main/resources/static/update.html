@@ -62,7 +62,7 @@
         $("#newPassword").blur(function () {
             var newPassword = $("#newPassword").val();
             if (newPassword == ""||newPassword==null||newPassword==undefined) {
-                $("#newPassword_feedback").text("原密码不能为空！");
+                $("#newPassword_feedback").text("新密码不能为空！");
             } else {
                 if (newPassword.length != 6) {
                     $("#newPassword_feedback").text("新密码只能为六位数字！");

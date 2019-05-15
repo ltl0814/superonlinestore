@@ -4,9 +4,21 @@ $(function () {
     var oid = getQueryString("oid");
     var uid = getQueryString("uid");
 
-    function payOrder(){
-        alert("支付成功！");
-    }
+    $("#payOrder").click(function () {
+        $.ajax({
+           type:"PUT",
+           url:"/public/api/backend/order/"+oid,
+           data:{"status":"已支付"},
+           success:function (res) {
+                if (res.status){
+                    alert("支付成功！");
+                    window.location.href="../../order_list.html?uid="+uid;
+                }else {
+                    alert("支付失败，卡上余额不足");
+                }
+            }
+        });
+    });
 
     $.ajax({
         type:"GET",
